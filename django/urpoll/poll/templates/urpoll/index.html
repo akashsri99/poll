@@ -27,10 +27,11 @@ $(".toggle_container").hide();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['A', 3],
-          ['B', 1],
-          ['C', 1],
-          ['D', 1]
+          ['{{ q.option1 }}', {{ q.vote_1 }}],
+          ['{{ q.option2 }}', {{ q.vote_2 }}],
+          ['{{ q.option3 }}', {{ q.vote_3 }}],
+          ['{{ q.option4 }}', {{ q.vote_4 }}],
+          
         ]);
 
         // Set chart options
@@ -60,10 +61,10 @@ $(".toggle_container").hide();
 <div class="block">
  <form  action="/create_post/" method="POST" id="post-form">
 {% csrf_token %}
-<input type="radio" name="A" id=choice value="1" /><label>A</label><br>
-<input type="radio" name="B" id=choice value="2" /><label>B</label><br>
-<input type="radio" name="C" id=choice value="3" /><label>C</label><br>
-<input type="radio" name="D" id=choice value="4" /><label>D</label><br>
+<input type="radio" name="A" id=choice value="1" /><label>{{ q.option1 }}</label><br>
+<input type="radio" name="B" id=choice value="2" /><label>{{ q.option1 }}</label><br>
+<input type="radio" name="C" id=choice value="3" /><label>{{ q.option1 }}</label><br>
+<input type="radio" name="D" id=choice value="4" /><label>{{ q.option1 }}</label><br>
 </form>      
 <div id="{{ q.id }}"></div>
     </div>
