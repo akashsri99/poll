@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% load staticfiles %}
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ 
+<title>Your Polls</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="{% static 'urpoll/style.css' %}" />
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1605638802988336&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="header">
+  <h1><a href="{% url 'index'  %}">Your Polls</a></h1>
+</div>
+<!--
+<div id="topnav">
+  <ul id="topnavlist">
+    <li><a class="active" href="#">Home</a></li>
+    <li><a href="#">Transaction History</a></li>
+    <li><a class="active" href="#">Transfer Funds</a></li>
+
+  </ul>
+</div>
+-->
+<div id="gutter"></div>
+
+<!-- Menu Bar -->
+<div id="col1">
+  <h2>Recent Posts</h2>
+  <div id="navcontainer">
+    <ul >
+      {% if category  %}
+      {% for c in category %}
+          <li><a href="{% url 'cat' c.id %}" >{{ c.Name }}</a></li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+  
+</div>
+
+
+<!-- Main Content -->
+
+<div id="col2">
+{% block content %}
+{% endblock %}
+</div>
+
+<!-- Sidebar -->
+
+<div id="col3">
+  <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>  
+</div>
+<div id="footer"> </div>
+</body>
+</html>
+

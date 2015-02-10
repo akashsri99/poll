@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+<script>
+$(".toggle_container").hide();
+    
+    $("button.trigger").click(function(){
+        $(this).toggleClass("active").next().slideToggle("normal");
+    });</script>
+{%block content %}
+{% if ques %}
+{% for q in ques %}
+<h2>
+{{ q.question  }}
+<script type="text/javascript">
+     google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['A', 3],
+          ['B', 1],
+          ['C', 1],
+          ['D', 1]
+        ]);
+
+        // Set chart options
+        var options = {'title':"Public's polls",
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('{{ q.id }}'));
+        chart.draw(data, options);
+      }
+    </script>
+  
+
+
+<button class="trigger"><a href="#">Cast your Poll</a></button>
+<div class="toggle_container">
+<div class="block">
+ <form >
+{% csrf_token %}
+<input type="radio" name="A" id=choice value="1" /><label>A</label><br>
+<input type="radio" name="B" id=choice value="2" /><label>B</label><br>
+<input type="radio" name="C" id=choice value="3" /><label>C</label><br>
+<input type="radio" name="D" id=choice value="4" /><label>D</label><br>
+</form>      
+<div id="{{ q.id }}"></div>
+    </div>
+</div>
+</h2>
+
+{% endfor %}
+{% endif %}      
+{% endblock %}
+
+<!-- Sidebar -->
+
+
