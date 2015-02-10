@@ -30,7 +30,7 @@ $(".toggle_container").hide();
           ['{{ q.option1 }}', {{ q.vote_1 }}],
           ['{{ q.option2 }}', {{ q.vote_2 }}],
           ['{{ q.option3 }}', {{ q.vote_3 }}],
-          ['{{ q.option4 }}', {{ q.vote_4 }}],
+          ['{{ q.option4 }}', {{ q.vote_4 }}]
           
         ]);
 
@@ -62,9 +62,9 @@ $(".toggle_container").hide();
  <form  action="/create_post/" method="POST" id="post-form">
 {% csrf_token %}
 <input type="radio" name="A" id=choice value="1" /><label>{{ q.option1 }}</label><br>
-<input type="radio" name="B" id=choice value="2" /><label>{{ q.option1 }}</label><br>
-<input type="radio" name="C" id=choice value="3" /><label>{{ q.option1 }}</label><br>
-<input type="radio" name="D" id=choice value="4" /><label>{{ q.option1 }}</label><br>
+<input type="radio" name="B" id=choice value="2" /><label>{{ q.option2}}</label><br>
+<input type="radio" name="C" id=choice value="3" /><label>{{ q.option3 }}</label><br>
+<input type="radio" name="D" id=choice value="4" /><label>{{ q.option4 }}</label><br>
 </form>      
 <div id="{{ q.id }}"></div>
     </div>
