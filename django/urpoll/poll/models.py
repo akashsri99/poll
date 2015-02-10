@@ -12,6 +12,14 @@ class Question(models.Model):
 	question=models.CharField(max_length=200)
 	date=models.DateTimeField('date published')
 	response=models.IntegerField(default=0)
+	option1=models.CharField(max_length=50)
+        option2=models.CharField(max_length=50)
+	option3=models.CharField(max_length=50)
+        option4=models.CharField(max_length=50)
+	vote_1=models.IntegerField(default=0)
+	vote_2=models.IntegerField(default=0)
+	vote_3=models.IntegerField(default=0)
+	vote_4=models.IntegerField(default=0)
 
 	def __unicode__(self):
 		return self.question

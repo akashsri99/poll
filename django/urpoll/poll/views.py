@@ -10,3 +10,7 @@ def index(request):
 def cat(request,id):
 	ques=Question.objects.filter(category=id)
 	return render(request,'urpoll/index.html',{'ques':ques})
+
+def options(request,id):
+	option=option_4.objects.filter(question=id)
+	return render(request,'urpoll/index.html',{'option':option})
