@@ -28,10 +28,10 @@ $(".toggle_container").hide();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['{{ q.option1 }}', {{ q.vote_1 }}],
-          ['{{ q.option2 }}', {{ q.vote_2 }}],
-          ['{{ q.option3 }}', {{ q.vote_3 }}],
-          ['{{ q.option4 }}', {{ q.vote_4 }}]
+          ['A', {{ q.vote_1 }}],
+          ['B', {{ q.vote_2 }}],
+          ['C', {{ q.vote_3 }}],
+          ['D', {{ q.vote_4 }}]
           
         ]);
 
