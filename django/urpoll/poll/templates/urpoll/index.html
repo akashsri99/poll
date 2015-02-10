@@ -42,6 +42,15 @@ $(".toggle_container").hide();
         var chart = new google.visualization.PieChart(document.getElementById('{{ q.id }}'));
         chart.draw(data, options);
       }
+      $('#post-form').on('submit', function(event){
+    event.preventDefault();
+    console.log("form submitted!")  // sanity check
+    create_post();
+});
+      function create_post() {
+    console.log("create post is working!") // sanity check
+    console.log($('#post-text').val())
+};
     </script>
   
 
@@ -49,7 +58,7 @@ $(".toggle_container").hide();
 <button class="trigger"><a href="#">Cast your Poll</a></button>
 <div class="toggle_container">
 <div class="block">
- <form >
+ <form  action="/create_post/" method="POST" id="post-form">
 {% csrf_token %}
 <input type="radio" name="A" id=choice value="1" /><label>A</label><br>
 <input type="radio" name="B" id=choice value="2" /><label>B</label><br>
