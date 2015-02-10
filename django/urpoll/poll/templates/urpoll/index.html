@@ -11,6 +11,7 @@ $(".toggle_container").hide();
 {% for q in ques %}
 <h2>
 {{ q.question  }}
+</h2>
 <script type="text/javascript">
      google.load('visualization', '1.0', {'packages':['corechart']});
 
@@ -69,7 +70,6 @@ $(".toggle_container").hide();
 <div id="{{ q.id }}"></div>
     </div>
 </div>
-</h2>
 
 {% endfor %}
 {% endif %}      
