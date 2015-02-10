@@ -29,9 +29,9 @@ class option_2(models.Model):
 class option_4(models.Model):
 	ques=models.ForeignKey(Question)
 	option1=models.CharField(max_length=50)
-    option2=models.CharField(max_length=50)
+        option2=models.CharField(max_length=50)
 	option3=models.CharField(max_length=50)
-    option4=models.CharField(max_length=50)
+        option4=models.CharField(max_length=50)
 	vote_1=models.IntegerField(default=0)
 	vote_2=models.IntegerField(default=0)
 	vote_3=models.IntegerField(default=0)
