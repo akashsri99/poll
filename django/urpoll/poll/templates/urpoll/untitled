@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{%block content %}
+<script type="text/javascript">
+     google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+      var A1="{{ details.vote_1 }}"
+      var B1="{{ details.vote_1 }}"
+      var C1="{{ details.vote_1 }}"
+      var D1="{{ details.vote_1 }}"
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['A', A1],
+          ['B', B1],
+          ['C', C1],
+          ['D', D1]
+          
+        ]);
+
+        // Set chart options
+        var options = {'title':"Public's polls",
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('{{ details.id }}'));
+        chart.draw(data, options);
+      }
+      
+      
+    </script>
+
+{% if details %}
+<h2>details.question</h2>
+<div class="toggle_container">
+<div class="block">
+ <form  action="/create_post/" method="POST" id="post-form">
+{% csrf_token %}
+<input type="radio" name="A" id=choice value="1" /><label>{{ details.option1 }}</label><br>
+<input type="radio" name="B" id=choice value="2" /><label>{{ details.option2}}</label><br>
+<input type="radio" name="C" id=choice value="3" /><label>{{ details.option3 }}</label><br>
+<input type="radio" name="D" id=choice value="4" /><label>{{ details.option4 }}</label><br>
+</form>      
+<div id="{{ details.id }}"></div>
+    </div>
+</div>
+
+{% endfor %}
+{% endif %}      
+{% endblock %}
+
+<!-- Sidebar -->
+
+
