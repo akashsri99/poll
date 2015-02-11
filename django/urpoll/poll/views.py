@@ -11,6 +11,6 @@ def cat(request,id):
 	ques=Question.objects.filter(category=id)
 	return render(request,'urpoll/index.html',{'ques':ques})
 
-def detail(request,id):
-	details=Question.objects.filter(question=id)
+def detail(request,id1):
+	details=Question.objects.filter(id=id1)
 	return render(request,'urpoll/details.html',{'details':details})
