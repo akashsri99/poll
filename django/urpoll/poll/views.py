@@ -19,7 +19,7 @@ def detail(request,id):
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
 	if request.POST['choice']==1:
-		details.vote_1=details.vote_1+1
+		details.vote_=details.vote_1+1
 
 	if request.POST['choice']==2:
 		details.vote_2=details.vote_2+1
