@@ -17,7 +17,7 @@ def detail(request,id):
 	return render(request,'urpoll/details.html',{'details':details})
 
 def submit_form(request,id):
-	details = get_object_or_404(Question, pk=id+1)
+	details = get_object_or_404(Question, pk=id)
 	'''details=request.POST['choice']
 '''
 	return render(request,'urpoll/details.html',{'details':details})
