@@ -1,11 +1,5 @@
 
 {% extends "base.html" %}
-<script>
-$(".toggle_container").hide();
-    
-    $("button.trigger").click(function(){
-        $(this).toggleClass("active").next().slideToggle("normal");
-    });</script>
 {%block content %}
 {% if ques %}
 {% for q in ques %}
@@ -48,15 +42,8 @@ $(".toggle_container").hide();
         var chart = new google.visualization.PieChart(document.getElementById('{{ q.id }}'));
         chart.draw(data, options);
       }
-      $('#post-form').on('submit', function(event){
-    event.preventDefault();
-    console.log("form submitted!")  // sanity check
-    create_post();
-});
-      function create_post() {
-    console.log("create post is working!") // sanity check
-    console.log($('#post-text').val())
-};
+      
+      
     </script>
   
 
