@@ -28,8 +28,6 @@ def submit_form(request,id):
 	if request.POST['choice']=="4":
 		details.vote_4=details.vote_4+1
 	c=request.POST['choice']
-	if request.POST['choice'] is null:
-		c="Empty POST"
 	details.save()
 
 	return render(request,'urpoll/details.html',{'details':details,'test':c})
