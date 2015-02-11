@@ -18,15 +18,18 @@ def detail(request,id):
 
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
-	if request.POST['choice']==1:
-		details.vote=details.vote_1+1
+	if request.POST['choice']=="1":
+		details.vote_1=details.vote_1+1
 
-	if request.POST['choice']==2:
+	if request.POST['choice']=="2":
 		details.vote_2=details.vote_2+1
-	if request.POST['choice']==3:
+	if request.POST['choice']=="3":
 		details.vote_3=details.vote_3+1
-	if request.POST['choice']==4:
+	if request.POST['choice']=="4":
 		details.vote_4=details.vote_4+1
 	c=request.POST['choice']
+	if request.POST['choice'] is null:
+		c="Empty POST"
+	details.save()
 
 	return render(request,'urpoll/details.html',{'details':details,'test':c})
