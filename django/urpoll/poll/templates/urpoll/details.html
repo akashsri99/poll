@@ -1,19 +1,6 @@
 {% extends "base.html" %}
 {%block content %}
-<script type="text/javascript" 
-    src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-  <script type="text/javascript">
-  /*<![CDATA[*/
-  jQuery(function() {
-      var form = jQuery("#form");
-      form.submit(function(e) {
-          $.('.message').html('Form Submitted');
-              });
-          e.preventDefault(); 
-      });
-  });
-  /*]]>*/
-  </script>
+<!-- Google Charts -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
      google.load('visualization', '1.0', {'packages':['corechart']});
@@ -54,19 +41,19 @@
       
       
     </script>
-
+<!-- Google chart ends -->
 {% if details %}
 <h2>{{ details.question }} </h2>
 <div class="message"></div>
 <div class="toggle_container">
 <div class="block">
- <form  action="{% url 'submit_form' %}" method="POST" id="form">
+ <form  action="{% url 'submit_form' details.id %}" method="POST" id="form">
 {% csrf_token %}
-<input type="radio" name="A" id=choice value="1" /><label>{{ details.option1 }}</label><br>
-<input type="radio" name="B" id=choice value="2" /><label>{{ details.option2}}</label><br>
-<input type="radio" name="C" id=choice value="3" /><label>{{ details.option3 }}</label><br>
-<input type="radio" name="D" id=choice value="4" /><label>{{ details.option4 }}</label><br>
-<input type="submit" value="submit" />
+<input type="radio" name="choice"  value="1" /><label>{{ details.option1 }}</label><br>
+<input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label><br>
+<input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label><br>
+<input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label><br>
+<input type="submit" value="Vote" />
 </form>      
 
 </div>
