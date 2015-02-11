@@ -7,5 +7,5 @@ urlpatterns = patterns('',
 		       url(r'^(?P<id>\d+)/$',views.cat,name='cat'),
 		       url(r'^(?P<id>\d+)/detail/$',views.detail,name='detail'),
 
-		       url(r'^submit/$',views.submit_form,name='submit_form'),
+		       url(r'^submit_form/$',views.submit_form,name='submit_form'),
 			)
