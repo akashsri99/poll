@@ -1,41 +1,7 @@
 
 {% extends "base.html" %}
 {%block content %}
-<script type="text/javascript">
-     google.load('visualization', '1.0', {'packages':['corechart']});
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart(A1,B1,C1,D1) {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['A', A1],
-          ['B', B1],
-          ['C', C1],
-          ['D', D1]
-          
-        ]);
-
-        // Set chart options
-        var options = {'title':"Public's polls",
-                       'width':400,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('{{ q.id }}'));
-        chart.draw(data, options);
-      }
-      
-      
-    </script>
 
 {% if ques %}
 {% for q in ques %}
@@ -45,15 +11,8 @@
 
 
 
-<button class="trigger"><a href="#">Cast your Poll</a></button>
-<script>
+<button class="trigger"><a href="{% url 'detail' q.id %}">See Public's Opinion</a></button>
 
-      var A1={{ q.vote_1 }}
-      var B1={{ q.vote_2 }}
-      var C1={{ q.vote_3 }}
-      var D1={{ q.vote_4 }}
-      drawChart(A1,B1,C1,D1)
-</script>
 <div class="toggle_container">
 <div class="block">
  <form  action="/create_post/" method="POST" id="post-form">
