@@ -49,10 +49,10 @@
 <div class="block">
  <form  action="{% url 'submit_form' details.id %}" method="POST" id="form">
 {% csrf_token %}
-<input type="radio" name="choice1"  value="1" /><label>{{ details.option1 }}</label><br>
-<input type="radio" name="choice2"  value="1" /><label>{{ details.option2}}</label><br>
-<input type="radio" name="choice3"  value="1" /><label>{{ details.option3 }}</label><br>
-<input type="radio" name="choice4"  value="1" /><label>{{ details.option4 }}</label><br>
+<input type="radio" name="choice"  value="1" /><label>{{ details.option1 }}</label><br>
+<input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label><br>
+<input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label><br>
+<input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label><br>
 <input type="submit" value="Vote" />
 </form>      
 
