@@ -16,10 +16,10 @@ class Question(models.Model):
         option2=models.CharField(max_length=50)
 	option3=models.CharField(max_length=50)
         option4=models.CharField(max_length=50)
-	vote_1=models.IntegerField(default=0)
-	vote_2=models.IntegerField(default=0)
-	vote_3=models.IntegerField(default=0)
-	vote_4=models.IntegerField(default=0)
+	vote_1=models.IntegerField(default=1)
+	vote_2=models.IntegerField(default=1)
+	vote_3=models.IntegerField(default=1)
+	vote_4=models.IntegerField(default=1)
 
 	def __unicode__(self):
 		return self.question
