@@ -12,5 +12,5 @@ def cat(request,id):
 	return render(request,'urpoll/index.html',{'ques':ques})
 
 def detail(request,id):
-	details=Question.objects.filter(id=id)
+	details=Question.objects.filter(id=1)
 	return render(request,'urpoll/details.html',{'details':details})
