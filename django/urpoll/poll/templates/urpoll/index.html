@@ -21,10 +21,10 @@ $(".toggle_container").hide();
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-      var A1="{{ q.vote_1 }}"
-      var B1="{{ q.vote_2 }}"
-      var C1="{{ q.vote_3 }}"
-      var D1="{{ q.vote_4 }}"
+      var A1={{ q.vote_1 }}
+      var B1={{ q.vote_2 }}
+      var C1={{ q.vote_3 }}
+      var D1={{ q.vote_4 }}
       function drawChart() {
 
         // Create the data table.
