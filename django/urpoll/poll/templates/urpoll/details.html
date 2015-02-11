@@ -7,7 +7,7 @@
   jQuery(function() {
       var form = jQuery("#form");
       form.submit(function(e) {
-          alert('Form Submitted')
+          $.('.message').html('Form Submitted');
               });
           e.preventDefault(); 
       });
@@ -57,6 +57,7 @@
 
 {% if details %}
 <h2>{{ details.question }} </h2>
+<div class="message"></div>
 <div class="toggle_container">
 <div class="block">
  <form  action="{% url 'submit_form' %}" method="POST" id="form">
