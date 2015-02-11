@@ -21,10 +21,10 @@ $(".toggle_container").hide();
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-      var A="{{ q.vote_1 }}"
-      var B="{{ q.vote_2 }}"
-      var C="{{ q.vote_3 }}"
-      var D="{{ q.vote_4 }}"
+      var A1="{{ q.vote_1 }}"
+      var B1="{{ q.vote_2 }}"
+      var C1="{{ q.vote_3 }}"
+      var D1="{{ q.vote_4 }}"
       function drawChart() {
 
         // Create the data table.
@@ -32,10 +32,10 @@ $(".toggle_container").hide();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['A', A],
-          ['B', B],
-          ['C', C],
-          ['D', D]
+          ['A', A1],
+          ['B', B1],
+          ['C', C1],
+          ['D', D1]
           
         ]);
 
