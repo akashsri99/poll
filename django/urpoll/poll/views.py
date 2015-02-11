@@ -8,8 +8,9 @@ def index(request):
 	return render(request,'urpoll/index.html',{'category':categorys})
 
 def cat(request,id):
+	categorys=category.objects.order_by('Name')
 	ques=Question.objects.filter(category=id)
-	return render(request,'urpoll/index.html',{'ques':ques})
+	return render(request,'urpoll/index.html',{'ques':ques,'category':categorys})
 
 def detail(request,id):
 	details=Question.objects.get(pk=id)
