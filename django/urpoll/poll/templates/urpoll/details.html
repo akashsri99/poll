@@ -6,7 +6,7 @@
 <script>  
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
-              $(form).hide();
+              $(button).hide();
                 alert("Thank You");
                 }); 
         });
@@ -51,11 +51,6 @@
         chart.draw(data, options);
       }
       
-      function testfunc()
-      {
-        var v=window.prompt(document.getElementById("form").innerHTML)
-        window.alert(y)
-      }
       
     </script>
 <!-- Google chart ends -->
@@ -72,7 +67,7 @@
 <input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label><br>
 <input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label><br>
 <input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label><br>
-<input type="submit" value="Vote" />
+<button type="submit" value="Vote" />
 </form>      
 
 </div>
