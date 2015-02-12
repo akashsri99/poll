@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {%block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
 <script src="http://malsup.github.com/jquery.form.js"></script> 
 
 <script>  
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
-              $(button).hide();
+              $("form").hide();
                 alert("Thank You");
                 }); 
         });
@@ -51,6 +52,11 @@
         chart.draw(data, options);
       }
       
+      function testfunc()
+      {
+        var v=window.prompt(document.getElementById("form").innerHTML)
+        window.alert(y)
+      }
       
     </script>
 <!-- Google chart ends -->
@@ -67,7 +73,7 @@
 <input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label><br>
 <input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label><br>
 <input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label><br>
-<button type="submit" value="Vote" >Submit</button>
+<input type="submit" value="Vote" />
 </form>      
 
 </div>
