@@ -10,7 +10,6 @@ class category(models.Model):
 class Question(models.Model):
 	category=models.ForeignKey(category)
 	question=models.CharField(max_length=200)
-	
 	date=models.DateTimeField('date published')
 	response=models.IntegerField(default=0)
 	option1=models.CharField(max_length=50)
@@ -24,28 +23,6 @@ class Question(models.Model):
 
 	def __unicode__(self):
 		return self.question
-
-class comment_A(models.Model):
-	question=models.ForeignKey(Question)
-	userid=models.CharField(max_length=100)
-	text=models.CharField(max_length=100)
-
-
-class comment_B(models.Model):
-	question=models.ForeignKey(Question)
-	userid=models.CharField(max_length=100)
-	text=models.CharField(max_length=100)
-
-class comment_C(models.Model):
-	question=models.ForeignKey(Question)
-	userid=models.CharField(max_length=100)
-	text=models.CharField(max_length=100)
-
-class comment_D(models.Model):
-	question=models.ForeignKey(Question)
-	userid=models.CharField(max_length=100)
-	text=models.CharField(max_length=100)
-
 
 class votes_ques(models.Model):
 	person_id=models.CharField(max_length=200)
