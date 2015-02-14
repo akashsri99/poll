@@ -70,7 +70,7 @@
 <div class="block">
  <form  action="{% url 'submit_form' details.id %}" method="POST" id="form">
 {% csrf_token %}
-<table>
+<table style="width:100%">
   <tr>
 <td><input type="radio" name="choice"  value="1" /><label>{{ details.option1 }}</label></td>
 <td><input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label></td>
