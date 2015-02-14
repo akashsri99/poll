@@ -115,6 +115,11 @@
   </ul>
 </div>
 
+<form action="{% url 'testsave' %}" method="POST">
+<label>Input :</label> <input type="text" name="test" />
+  <input type="Submit" name="Submit">
+</form>
+
 {% endif %}      
 {% endblock %}
 
