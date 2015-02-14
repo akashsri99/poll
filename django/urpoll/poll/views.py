@@ -32,8 +32,8 @@ def submit_form(request,id):
 		details.vote_4=details.vote_4+1
 
 	details.response=details.response+1
-	c=request.POST['choice']
+	c=request.POST.get('choice')
 	details.save()
-	reason=request.POST['reason']
+	reason=request.POST.get('reason')
 
 	return render(request,'urpoll/details.html',{'details':details,'reason':reason})
