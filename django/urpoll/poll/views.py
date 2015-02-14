@@ -40,4 +40,8 @@ def submit_form(request,id):
 
 def testsave(request,id):
 	request.POST['test']
+	ctext=request.POST['test']
+	C=comment_A(question="1",userid="1",text=ctext)
+	C.save()
+	return render(request,'urpoll/details.html',{})
 
