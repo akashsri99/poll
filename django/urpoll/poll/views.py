@@ -26,11 +26,11 @@ def submit_form(request,id):
 		comment=comment_A(question=id,userid=1,text=ctext)
 		comment.save()
 
-	if request.POST['choice']=="2":
+	if request.POST.get('choice')=="2":
 		details.vote_2=details.vote_2+1
-	if request.POST['choice']=="3":
+	if request.POST.get('choice')=="3":
 		details.vote_3=details.vote_3+1
-	if request.POST['choice']=="4":
+	if request.POST.get('choice')=="4":
 		details.vote_4=details.vote_4+1
 
 	details.response=details.response+1
