@@ -121,11 +121,11 @@ function radioclick(val)
 
 </script>
 <div id="panel">   
-<form action="" method="POST">
+<form action="{% url 'reason_opt' details.id %}" method="POST">
   {% csrf_token %}
 <h2 id="test1"></h2><input type="hidden"  id="result" name="ans" />
 
-<label>Input :</label> <input type="text" name="test" />
+<label>Short Reason :</label> <input type="text" name="test" />
   <input type="Submit" name="Submit">
 </form>
 </div>

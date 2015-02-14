@@ -8,4 +8,6 @@ urlpatterns = patterns('',
 		       url(r'^(?P<id>\d+)/detail/$',views.detail,name='detail'),
 
 		       url(r'^(?P<id>\d+)/submit_form/$',views.submit_form,name='submit_form'),
+
+		       url(r'^(?P<id>\d+)/detail/$',views.reason_opt,name='reason_opt'),
 			)
