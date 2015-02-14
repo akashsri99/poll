@@ -7,8 +7,8 @@
 <script>  
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
-              var reason=window.prompt("Want to tell the reason for your choice");
-              document.getElementById("#reason").value=reason;
+              var rea=window.prompt("Want to tell the reason for your choice");
+              document.getElementById('#reason').value=rea;
               $("input").hide();
                 
                 }); 
@@ -54,15 +54,7 @@
         chart.draw(data, options);
       }
       
-      function testfunc()
-      {
-        var v=window.prompt(document.getElementById("form").innerHTML)
-        window.alert(y)
-      }
-      bootbox.alert("Hello world!", function() {
-  Example.show("Hello world callback");
-});
-      
+       
     </script>
 <!-- Google chart ends -->
 {% if reasons %}
