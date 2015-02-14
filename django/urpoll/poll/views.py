@@ -41,7 +41,8 @@ def submit_form(request,id):
 def testsave(request,id):
 	request.POST['test']
 	ctext=request.POST['test']
-	C=comment_A(question=id,userid="1",text=ctext)
+	Q=Question.objects.get(pk=id)
+	C=comment_A(question=Q,userid="1",text=ctext)
 	C.save()
 	return render(request,'urpoll/details.html',{})
 
