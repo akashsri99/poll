@@ -8,7 +8,10 @@
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
               var rea=window.prompt("Want to tell the reason for your choice");
+              if(rea)
+              {
               document.getElementById('#reason').value=rea;
+              }
               $("input").hide();
                 
                 }); 
