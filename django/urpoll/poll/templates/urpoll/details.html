@@ -118,6 +118,7 @@ test
 </div>
 
 <form action="{% url 'testsave' details.id %}" method="POST">
+  {% csrf_token %}
 <label>Input :</label> <input type="text" name="test" />
   <input type="Submit" name="Submit">
 </form>
