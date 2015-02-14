@@ -6,9 +6,8 @@
 
 <script>  
         $(document).ready(function() {
-           $('#form').reason=window.prompt("Want to tell the reason for your choice");
-              
             $('#form').ajaxForm(function() {
+              var reason=window.prompt("Want to tell the reason for your choice");
               $("input").hide();
                 
                 }); 
