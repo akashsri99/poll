@@ -102,7 +102,7 @@
 <div id="panel">   
 <form action="{% url 'testsave' details.id %}" method="POST">
   {% csrf_token %}
-<input type="text" id="result" name="ans">
+<input type="text" id="result" name="ans" /><label>Option</label>
 <script>
 function radioclick(val)
 {
