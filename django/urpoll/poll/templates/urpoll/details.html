@@ -98,21 +98,6 @@
 <input type="submit" value="Vote" />
 
 </form>   
-<script>
-function radioclick(val)
-{
-  document.getElementById("result").value=val;
-}
-<div id="panel">   
-<form action="{% url 'testsave' details.id %}" method="POST">
-  {% csrf_token %}
-<input type="text" id="result" name="ans" /><label>Option</label>
-
-</script>
-<label>Input :</label> <input type="text" name="test" />
-  <input type="Submit" name="Submit">
-</form>
-</div>
 
 
 </div>
@@ -133,12 +118,22 @@ function radioclick(val)
 
   </ul>
 </div>
-
+<script>
+function radioclick(val)
+{
+  document.getElementById("result").value=val;
+}
+<div id="panel">   
 <form action="{% url 'testsave' details.id %}" method="POST">
   {% csrf_token %}
+<input type="text" id="result" name="ans" /><label>Option</label>
+
+</script>
 <label>Input :</label> <input type="text" name="test" />
   <input type="Submit" name="Submit">
 </form>
+</div>
+
 
 {% endif %}      
 {% endblock %}
