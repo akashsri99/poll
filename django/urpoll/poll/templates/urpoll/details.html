@@ -21,6 +21,7 @@
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
               $("input").hide();
+              $('#panel').show();
                 });
                 });
        </script> 
@@ -90,15 +91,26 @@
 <tr>
 </tr>
 </table>
-<div id="panel">
-  "Hello World!!!""
-
-</div>
-<button   id="just" >Vote and Justify</button> 
 <input type="submit" value="Vote" />
 </form>      
 
 </div>
+</div>
+<script>
+function radioclick(val)
+{
+  document.getElementById("result").value=val;
+}
+
+</script>
+<div id="panel">   
+<form action="" method="POST">
+  {% csrf_token %}
+<input type="text" id="result" name="ans" /><label>Option</label>
+
+<label>Input :</label> <input type="text" name="test" />
+  <input type="Submit" name="Submit">
+</form>
 </div>
 
 
