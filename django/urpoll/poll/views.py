@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 from django.template import RequestContext,loader
-from poll.models import category,Question,comment_A
+from poll.models import category,Question
 
 def index(request):
 	categorys=category.objects.order_by('Name')
@@ -22,11 +22,6 @@ def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
 	if request.POST.get('choice')=="1":
 		details.vote_1=details.vote_1+1
-		if request.POST.get('reason'):
-			text1=request.POST.get('reason')
-			comment=comment_A(Question=id,userid=1,text=text1)
-			comment.save()
-
 		
 
 	if request.POST.get('choice')=="2":
