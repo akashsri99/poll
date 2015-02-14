@@ -38,6 +38,6 @@ def submit_form(request,id):
 
 	return render(request,'urpoll/details.html',{'details':details,'reason':reason})
 
-def testsave(request):
+def testsave(request,id):
 	request.POST['test']
 
