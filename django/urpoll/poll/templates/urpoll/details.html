@@ -79,12 +79,12 @@
 {% csrf_token %}
 <table style="width:100%">
   <tr>
-<td><label>A:</label><input type="radio" name="choice"  value="1" /><label>{{ details.option1 }}</label></td>
-<td><label>B:</label><input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label></td>
+<td><label>A:</label><input type="radio" name="choice" onclick="radioclick(this.value)" value="1" /><label>{{ details.option1 }}</label></td>
+<td><label>B:</label><input type="radio" name="choice" onclick="radioclick(this.value)" value="2" /><label>{{ details.option2}}</label></td>
 </tr>
 <tr>
-<td><label>C:</label><input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label></td>
-<td><label>D:</label><input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label></td>
+<td><label>C:</label><input type="radio" name="choice" onclick="radioclick(this.value)" value="3" /><label>{{ details.option3 }}</label></td>
+<td><label>D:</label><input type="radio" name="choice" onclick="radioclick(this.value)" value="4" /><label>{{ details.option4 }}</label></td>
 </tr>
 <input type="hidden" name="reason" id="hreason"/>
 <tr>
@@ -96,12 +96,29 @@
 </div>
 <button   id="just" >Vote and Justify</button> 
 <input type="submit" value="Vote" />
-</form>      
+
+</form>   
+
+<div id="panel">   
+<form action="{% url 'testsave' details.id %}" method="POST">
+  {% csrf_token %}
+<input type="text" id="result" name="ans">
+<script>
+function radioclick(val)
+{
+  document.getElementById("result").value=val;
+}
+</script>
+<label>Input :</label> <input type="text" name="test" />
+  <input type="Submit" name="Submit">
+</form>
+</div>
+
 
 </div>
 </div>
 
-test
+
 
 
 <div id="graph"></div>
