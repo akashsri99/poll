@@ -101,13 +101,29 @@
 function radioclick(val)
 {
   document.getElementById("result").value=val;
+  if(val==1)
+  {
+    $("#test1").html("Why <b> A </b> ");
+  }
+  if(val==2)
+  {
+    $("#test1").html("Why <b> B </b> ");
+  }
+  if(val==3)
+  {
+    $("#test1").html("Why <b> C </b> ");
+  }
+  if(val==4)
+  {
+    $("#test1").html("Why <b> D </b> ");
+  }
 }
 
 </script>
 <div id="panel">   
 <form action="" method="POST">
   {% csrf_token %}
-<label>Option</label><h2 id="result"><input type="hidden"  id="result" name="ans" /></h2>
+<h2 id="test1"></h2><input type="hidden"  id="result" name="ans" />
 
 <label>Input :</label> <input type="text" name="test" />
   <input type="Submit" name="Submit">
