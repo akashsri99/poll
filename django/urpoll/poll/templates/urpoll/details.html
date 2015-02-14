@@ -58,6 +58,9 @@
         var v=window.prompt(document.getElementById("form").innerHTML)
         window.alert(y)
       }
+      bootbox.alert("Hello world!", function() {
+  Example.show("Hello world callback");
+});
       
     </script>
 <!-- Google chart ends -->
@@ -79,6 +82,7 @@
 </div>
 </div>
 <div id="graph"></div>
+<button onclick="bootbox.alert">Test</button>
 <div id="topnav">
   <ul id="topnavlist">
     <li><a class="active" href="#">A</a></li>
