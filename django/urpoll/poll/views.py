@@ -37,4 +37,4 @@ def submit_form(request,id):
 	
 	details.save()
 	
-	return render(request,'urpoll/details.html',{'details':details,'reason':reason})
+	return render(request,'urpoll/details.html',{'details':details})
