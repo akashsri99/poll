@@ -40,18 +40,18 @@ def submit_form(request,id):
 
 def reason_opt(request,id):
 		ques=Question.objects.get(pk=id)
-		ans=request.POST.get('ans')
+		ans1=request.POST.get('ans')
 		ctext=request.POST.get('text')
-		if ans==1:
+		if ans1==1:
 			c=comment_A(question=ques,userid="1",text=ctext)
 			c.save()
-		elif ans==2:
+		elif ans1==2:
 			c=comment_B(question=ques,userid="2",text=ctext)
 			c.save()
-		elif ans==3:
+		elif ans1==3:
 			c=comment_C(question=ques,userid="3",text=ctext)
 			c.save()
-		elif ans==4:
+		elif ans1==4:
 			c=comment_D(question=ques,userid="4",text=ctext)
 			c.save()
 
