@@ -44,12 +44,16 @@ def reason_opt(request,id):
 		ctext=request.POST.get('text')
 		if ans==1:
 			c=comment_A(question=ques,userid="1",text=ctext)
+			c.save()
 		elif ans==2:
 			c=comment_B(question=ques,userid="2",text=ctext)
+			c.save()
 		elif ans==3:
 			c=comment_C(question=ques,userid="3",text=ctext)
+			c.save()
 		elif ans==4:
 			c=comment_D(question=ques,userid="4",text=ctext)
-		c.save()
+			c.save()
+
 		return render(request,'urpoll/details.html',{})
 
