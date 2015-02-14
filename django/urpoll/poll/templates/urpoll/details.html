@@ -7,7 +7,7 @@
 <script>  
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
-              var v=window.prompt("Want to tell the reason for your choice");
+              var reason=window.prompt("Want to tell the reason for your choice");
               $("input").hide();
                 
                 }); 
@@ -64,7 +64,8 @@
       
     </script>
 <!-- Google chart ends -->
-
+{% if reasons %}
+{{ reasons }}
 {% if details %}
 <h2>{{ details.question }} </h2>
 <div class="message"></div>
@@ -76,7 +77,9 @@
 <input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label><br>
 <input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label><br>
 <input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label><br>
+<input type="hidden" name="reason" />
 <input type="submit" value="Vote" />
+
 </form>      
 
 </div>
