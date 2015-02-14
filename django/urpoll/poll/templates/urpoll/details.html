@@ -3,17 +3,24 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
 <script src="http://malsup.github.com/jquery.form.js"></script> 
-<style> 
+<style>
 #panel{
     padding: 5px;
     text-align: center;
-    }
-</style>
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
 
+#panel {
+    padding: 50px;
+    display: none;
+}
+    }
+  </style>
 <script>  
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
-              $("input").hide();
+              $('#prblm').hide();
               $('#panel').slideDown("slow");
                 });
                 });
@@ -73,18 +80,15 @@
 {% csrf_token %}
 <table style="width:100%">
   <tr>
-<td><label>A:</label><input type="radio" name="choice" onclick="radioclick(this.value)"  value="1" /><label>{{ details.option1 }}</label></td>
-<td><label>B:</label><input type="radio" name="choice" onclick="radioclick(this.value)"  value="2" /><label>{{ details.option2}}</label></td>
+<td><label>A:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="1" /><label>{{ details.option1 }}</label></td>
+<td><label>B:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="2" /><label>{{ details.option2}}</label></td>
 </tr>
 <tr>
-<td><label>C:</label><input type="radio" name="choice" onclick="radioclick(this.value)"  value="3" /><label>{{ details.option3 }}</label></td>
-<td><label>D:</label><input type="radio" name="choice" onclick="radioclick(this.value)"  value="4" /><label>{{ details.option4 }}</label></td>
-</tr>
-<input type="hidden" name="reason" id="hreason"/>
-<tr>
+<td><label>C:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="3" /><label>{{ details.option3 }}</label></td>
+<td><label>D:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="4" /><label>{{ details.option4 }}</label></td>
 </tr>
 </table>
-<input type="submit" value="Vote" />
+<input type="submit" value="Vote" id="prblm" />
 </form>      
 
 </div>
