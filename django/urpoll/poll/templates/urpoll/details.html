@@ -19,20 +19,11 @@
 
 <script>  
         $(document).ready(function() {
-            $('#form').submit(function() {
-              $.ajax({
-                data:$(this).serialize(),
-                url:$(this).attr('action'),
-                success:function(response)
-                {
-                   $("input").hide();
-                }
-              });
-              return false;
-             
+            $('#form').ajaxForm(function() {
+              $("input").hide();
                 });
                 });
- </script> 
+       </script> 
  
 <!-- Google Charts -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
