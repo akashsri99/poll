@@ -20,8 +20,8 @@ def detail(request,id):
 
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
-	ctext=request.POST.get('test')
-	C=comment_A(question=details,userid="1",text=ctext)
+	ctext=request.POST['test']
+	C=comment_A(question=Q,userid="1",text=ctext)
 	C.save()
 	if request.POST['choice']=="1":
 		details.vote_1=details.vote_1+1
