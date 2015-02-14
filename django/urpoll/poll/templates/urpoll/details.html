@@ -24,6 +24,7 @@
               $('#prblm2').hide();
               $('#prblm3').hide();
               $('#prblm4').hide();
+              $('#prblm5').hide();
               $('#panel').slideDown("slow");
                 });
                 });
@@ -91,7 +92,7 @@
 <td><label>D:</label><input type="radio" name="choice" id="prblm4" onclick="radioclick(this.value)"  value="4" /><label>{{ details.option4 }}</label></td>
 </tr>
 </table>
-<input type="submit" value="Vote" id="prblm" />
+<input type="submit" value="Vote" id="prblm5" />
 </form>      
 
 </div>
@@ -106,7 +107,7 @@ function radioclick(val)
 <div id="panel">   
 <form action="" method="POST">
   {% csrf_token %}
-<label>Option</label><h2><input type="text" id="result" name="ans" /></h2>
+<label>Option</label><h2 id="result"><input type="hidden"  id="result" name="ans" /></h2>
 
 <label>Input :</label> <input type="text" name="test" />
   <input type="Submit" name="Submit">
