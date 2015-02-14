@@ -8,6 +8,7 @@
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
               var reason=window.prompt("Want to tell the reason for your choice");
+              document.getElementById("#reason").value=reason;
               $("input").hide();
                 
                 }); 
@@ -78,7 +79,7 @@
 <input type="radio" name="choice"  value="2" /><label>{{ details.option2}}</label><br>
 <input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label><br>
 <input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label><br>
-<input type="hidden" name="reason" />
+<input type="hidden" name="reason" id="reason"/>
 <input type="submit" value="Vote" />
 
 </form>      
