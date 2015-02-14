@@ -21,6 +21,7 @@
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
               $("input").hide();
+              $("panel").show();
                 });
                 });
        </script> 
@@ -86,13 +87,7 @@
 <td><label>C:</label><input type="radio" name="choice" onclick="radioclick(this.value)" value="3" /><label>{{ details.option3 }}</label></td>
 <td><label>D:</label><input type="radio" name="choice" onclick="radioclick(this.value)" value="4" /><label>{{ details.option4 }}</label></td>
 </tr>
-Reason: <input type="text" name="test" />
-
 </table>
-<div id="panel">
-  "Hello World!!!""
-
-</div>
 <button   id="just" >Vote and Justify</button> 
 <input type="submit" value="Vote" />
 
@@ -101,6 +96,23 @@ Reason: <input type="text" name="test" />
 
 </div>
 </div>
+<script>
+function radioclick(val)
+{
+  document.getElementById("result").value=val;
+}
+
+</script>
+<div id="panel">   
+<form action="{% url 'testsave' details.id %}" method="POST">
+  {% csrf_token %}
+<input type="text" id="result" name="ans" /><label>Option</label>
+
+<label>Input :</label> <input type="text" name="test" />
+  <input type="Submit" name="Submit">
+</form>
+</div>
+
 
 
 
@@ -116,22 +128,6 @@ Reason: <input type="text" name="test" />
 
 
   </ul>
-</div>
-<script>
-function radioclick(val)
-{
-  document.getElementById("result").value=val;
-}
-
-</script>
-<div id="p">   
-<form action="{% url 'testsave' details.id %}" method="POST">
-  {% csrf_token %}
-<input type="text" id="result" name="ans" /><label>Option</label>
-
-<label>Input :</label> <input type="text" name="test" />
-  <input type="Submit" name="Submit">
-</form>
 </div>
 
 
