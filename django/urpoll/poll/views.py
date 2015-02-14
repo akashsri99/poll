@@ -14,10 +14,9 @@ def cat(request,id):
 	return render(request,'urpoll/index.html',{'ques':ques,'category':categorys})
 
 def detail(request,id):
-
 	categorys=category.objects.order_by('Name')
 	details=Question.objects.get(pk=id)
-	return render(request,'urpoll/details.html',{'details':details})
+	return render(request,'urpoll/details.html',{'details':details,'category':category})
 
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
