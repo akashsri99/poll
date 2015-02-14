@@ -50,5 +50,6 @@ def reason_opt(request,id):
 			c=comment_C(question=ques,userid="3",text=ctext)
 		elif ans==4:
 			c=comment_D(question=ques,userid="4",text=ctext)
+		c.save()
 		return render(request,'urpoll/details.html',{})
 
