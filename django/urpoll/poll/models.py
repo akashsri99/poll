@@ -11,7 +11,7 @@ class Question(models.Model):
 	category=models.ForeignKey(category)
 	question=models.CharField(max_length=200)
 	
-	=models.DateTimeField('date published')
+	date=models.DateTimeField('date published')
 	response=models.IntegerField(default=0)
 	option1=models.CharField(max_length=50)
         option2=models.CharField(max_length=50)
