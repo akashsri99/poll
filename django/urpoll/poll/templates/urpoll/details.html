@@ -19,7 +19,10 @@
 
 <script>  
         $(document).ready(function() {
-            $('#form').ajaxForm(function() {
+            $('#form').submit(function() {
+              $.ajax({
+                data:$(this).serialize();
+              });
               $("input").hide();
                 });
                 });
