@@ -101,6 +101,8 @@
 </div>
 </div>
 
+test
+
 
 <div id="graph"></div>
 <div id="topnav">
@@ -115,7 +117,7 @@
   </ul>
 </div>
 
-<form action="{% url 'testsave' %}" method="POST">
+<form action="{% url 'testsave' details.id %}" method="POST">
 <label>Input :</label> <input type="text" name="test" />
   <input type="Submit" name="Submit">
 </form>
