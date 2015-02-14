@@ -21,12 +21,16 @@
         $(document).ready(function() {
             $('#form').submit(function() {
               $.ajax({
-                data:$(this).serialize()
+                data:$(this).serialize(),
+                success:function(response)
+                {
+                   $("input").hide();
+                }
               });
-              $("input").hide();
+             
                 });
                 });
-       </script> 
+ </script> 
  
 <!-- Google Charts -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
