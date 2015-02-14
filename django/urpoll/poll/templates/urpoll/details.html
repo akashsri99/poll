@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {%block content %}
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-<script src="http://malsup.github.com/jquery.form.js"></script> 
+
 <style> 
 #panel{
     padding: 5px;
@@ -95,7 +94,7 @@
 <td><label>C:</label><input type="radio" name="choice"  value="3" /><label>{{ details.option3 }}</label></td>
 <td><label>D:</label><input type="radio" name="choice"  value="4" /><label>{{ details.option4 }}</label></td>
 </tr>
-<input type="hidden" name="reason" id="hreason"/>
+<input type="text" name="reason" id="hreason"/>
 <tr>
 </tr>
 </table>
