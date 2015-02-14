@@ -5,7 +5,8 @@ from poll.models import category,Question
 
 def index(request):
 	categorys=category.objects.order_by('Name')
-	return render(request,'urpoll/index.html',{'category':categorys})
+	ques=Question.objects.order_by('-date')
+	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques})
 
 def cat(request,id):
 	categorys=category.objects.order_by('Name')
@@ -13,6 +14,8 @@ def cat(request,id):
 	return render(request,'urpoll/index.html',{'ques':ques,'category':categorys})
 
 def detail(request,id):
+
+	categorys=category.objects.order_by('Name')
 	details=Question.objects.get(pk=id)
 	return render(request,'urpoll/details.html',{'details':details})
 
@@ -27,6 +30,8 @@ def submit_form(request,id):
 		details.vote_3=details.vote_3+1
 	if request.POST['choice']=="4":
 		details.vote_4=details.vote_4+1
+
+	details.response=details.response+1
 	c=request.POST['choice']
 	details.save()
 
