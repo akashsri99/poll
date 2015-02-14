@@ -20,7 +20,10 @@
 <script>  
         $(document).ready(function() {
             $('#form').ajaxForm(function() {
-              $('#prblm').hide();
+              $('#prblm1').hide();
+              $('#prblm2').hide();
+              $('#prblm3').hide();
+              $('#prblm4').hide();
               $('#panel').slideDown("slow");
                 });
                 });
@@ -80,12 +83,12 @@
 {% csrf_token %}
 <table style="width:100%">
   <tr>
-<td><label>A:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="1" /><label>{{ details.option1 }}</label></td>
-<td><label>B:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="2" /><label>{{ details.option2}}</label></td>
+<td><label>A:</label><input type="radio" name="choice" id="prblm1" onclick="radioclick(this.value)"  value="1" /><label>{{ details.option1 }}</label></td>
+<td><label>B:</label><input type="radio" name="choice" id="prblm2" onclick="radioclick(this.value)"  value="2" /><label>{{ details.option2}}</label></td>
 </tr>
 <tr>
-<td><label>C:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="3" /><label>{{ details.option3 }}</label></td>
-<td><label>D:</label><input type="radio" name="choice" id="prblm" onclick="radioclick(this.value)"  value="4" /><label>{{ details.option4 }}</label></td>
+<td><label>C:</label><input type="radio" name="choice" id="prblm3" onclick="radioclick(this.value)"  value="3" /><label>{{ details.option3 }}</label></td>
+<td><label>D:</label><input type="radio" name="choice" id="prblm4" onclick="radioclick(this.value)"  value="4" /><label>{{ details.option4 }}</label></td>
 </tr>
 </table>
 <input type="submit" value="Vote" id="prblm" />
