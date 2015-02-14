@@ -22,7 +22,11 @@ def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
 	if request.POST.get('choice')=="1":
 		details.vote_1=details.vote_1+1
-		comment=request.POST.get('reason')
+		if request.POST.get('reason'):
+			text1=request.POST.get('reason')
+			comment=comment_A(Question=id,userid=1,text=text1)
+			comment.save()
+
 		
 
 	if request.POST.get('choice')=="2":
