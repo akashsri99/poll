@@ -37,3 +37,7 @@ def submit_form(request,id):
 	reason=request.POST['reason']
 
 	return render(request,'urpoll/details.html',{'details':details,'reason':reason})
+
+def testsave(request):
+	request.POST['test']
+
