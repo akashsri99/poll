@@ -25,7 +25,9 @@ function signinCallback(authResult) {
     document.getElementById('signinButton').setAttribute('style', 'display: none');
     var idToken = authResult['id_token'];
 if (idToken) {
-  alert(idToken);
+  Person mePerson = plus.people().get("me").execute();
+
+  alert(mePerson.getId());
   }
   } else {
     // Update the app to reflect a signed out user
