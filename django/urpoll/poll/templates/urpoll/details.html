@@ -181,7 +181,15 @@ $('#results').html( '&nbsp;').load('{% url 'get_comments' details.id %}');
 
   </ul>
 </div>
-<div id="results"><div>
+<div id="results">
+{% if comments %}
+{% for comment in comments %}
+{{ comment.text }}
+<br>
+{% endfor %}
+ {% endif %}
+
+  <div>
 
 {% endif %}      
 {% endblock %}
