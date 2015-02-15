@@ -59,6 +59,6 @@ def reason_opt(request,id):
 
 def get_comments(request,id):
 	c=comment_A.objects.filter(question=id)
-	return render(request,'urpoll/details',{'comments':c})
+	return render(request,'urpoll/details.html',{'comments':c})
 
 
