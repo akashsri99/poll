@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {%block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+<script src="http://malsup.github.com/jquery.form.js"></script> 
 <style>
 #panel{
     padding: 5px;
@@ -14,6 +17,25 @@
 }
     }
   </style>
+<script>  
+        $(document).ready(function() {
+
+            $('#form').ajaxForm(function() {
+
+              $('#prblm1').hide();
+              $('#prblm2').hide();
+              $('#prblm3').hide();
+              $('#prblm4').hide();
+              $('#prblm5').hide();
+              $('#panel').slideDown("slow");
+                });
+          });
+
+              
+
+
+       </script> 
+ 
 <!-- Google Charts -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
@@ -81,6 +103,53 @@
 
 </div>
 </div>
+<script>
+function radioclick(val)
+{
+  document.getElementById("result").value=val;
+  if(val==1)
+  {
+    $("#test1").html("Why  A  ? ");
+  }
+  if(val==2)
+  {
+    $("#test1").html("Why  B  ? ");
+  }
+  if(val==3)
+  {
+    $("#test1").html("Why  C  ? ");
+  }
+  if(val==4)
+  {
+    $("#test1").html("Why D ? ");
+  }
+}
+/*$('#form2').submit(function(e)
+              {
+                $('#panel').html('<img src="http://preloaders.net/preloaders/287/Filling%20broken%20ring.gif"> ');
+                $.ajax({
+                  url:$(this).attr("action"),
+                  data:$(this).serializeArray(),
+                  type:"POST",
+                  success:function(d)
+                  {
+                    $('#panel').slideUp("slow");
+                  }
+                });
+                e.preventDefault();
+                e.unbind();
+
+                });*/
+
+ $(document).ready(function() {
+
+            $('#form2').ajaxForm(function() {
+              $('#panel').slideUp("slow");
+                });
+          });
+
+
+</script>
 <div id="panel">   
 <form action="{% url 'reason_opt' details.id %}" method="POST" id="form2">
   {% csrf_token %}
@@ -90,6 +159,40 @@
   <input type="Submit" name="Submit">
 </form>
 </div>
+<script>
+$(document).ready(function()
+{
+  $('#spinner').hide();
+  /* clicking A */
+$('#opt1').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
+});
+ /* Clicking B */
+ $('#opt2').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_B' details.id %}');
+});
+
+$('#opt3').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_C' details.id %}');
+});
+
+$('#opt4').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
+});
+
+$(document).ajaxStart(function()
+{
+  $('#spinner').show();
+}).ajaxStop(function()
+{
+  $('#spinner').hide();
+})
+});
+</script>
 
 <div id="graph"></div>
 <div id="topnav">
@@ -102,11 +205,8 @@
 
 
   </ul>
-
 </div>
-
-<span id="spinner" align="center"><img src="{{ STATIC_URL }}spinner.gif" /></span>
-
+<span id="spinner"><img src="{{ STATIC_URL }}spinner.gif" align="middle" /></span>
 <div id="results">
 
   <div>
