@@ -129,7 +129,7 @@ $('#form2').submit(function(e)
                 $('#panel').html('<img src="http://preloaders.net/preloaders/287/Filling%20broken%20ring.gif"> ');
                 $.ajax({
                   url:$(this).attr("action"),
-                  data:$(this).serializeArray();
+                  data:$(this).serializeArray(),
                   type:"POST",
                   success:function(d)
                   {
