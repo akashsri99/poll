@@ -183,6 +183,13 @@ $('#opt4').click(function()
 $('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
 });
 
+$(document).ajaxStart(function()
+{
+  $('#spinner').show();
+}).ajaxStop(function()
+{
+  $('#spinner').hide();
+})
 });
 </script>
 
@@ -198,6 +205,7 @@ $('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
 
   </ul>
 </div>
+<span id="spinner"><img src="{{ STATIC_URL }}spinner.gif"/></span>
 <div id="results">
 {% if comments %}
 {% for comment in comments %}
