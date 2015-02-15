@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-
+from django.views.generic.base import RedirectView
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'urpoll.views.home', name='home'),
