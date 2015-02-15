@@ -159,12 +159,20 @@ function radioclick(val)
   <input type="Submit" name="Submit">
 </form>
 </div>
-
+<script>
+$(document).ready(function()
+{
+$('#test').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url get_comments details.id %}');
+});
+});
+</script>
 
 <div id="graph"></div>
 <div id="topnav">
   <ul id="topnavlist">
-    <li><a class="active" href="#">A</a></li>
+    <li><a class="active" id="#test">A</a></li>
     <li><a href="#">B</a></li>
     <li><a  href="#">C</a></li>
 
@@ -173,6 +181,7 @@ function radioclick(val)
 
   </ul>
 </div>
+<div id="results"><div>
 
 {% endif %}      
 {% endblock %}

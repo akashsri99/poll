@@ -57,3 +57,8 @@ def reason_opt(request,id):
 
 		return render(request,'urpoll/details.html',{})
 
+def get_comments(request,id):
+	c=comment_A.objects.get(question=id)
+	return render(request,'urpoll/details',{'comments':c})
+
+
