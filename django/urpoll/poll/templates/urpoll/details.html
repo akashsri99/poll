@@ -164,8 +164,8 @@ $(document).ready(function()
 {
 $('#test').click(function()
 {
-var q=document.getElementById("result").value;
-$('#results').html( '&nbsp;').load('{% url 'get_comments' details.id q %}');
+  
+$('#results').html( '&nbsp;').load('{% url 'get_comments' details.id %}');
 });
 });
 </script>

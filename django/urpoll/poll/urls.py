@@ -9,5 +9,12 @@ urlpatterns = patterns('',
 
 		       url(r'^(?P<id>\d+)/submit_form/$',views.submit_form,name='submit_form'),
 		       url(r'^(?P<id>\d+)/reason_opt/$',views.reason_opt,name='reason_opt'),
-		       url(r'^(?P<id>\d+)/get_comments/$',views.get_comments,name='get_comments'),
+		       url(r'^(?P<id>\d+)/get_comments_A/$',views.get_comments_A,name='get_comments_A'),
+		       url(r'^(?P<id>\d+)/get_comments_B/$',views.get_comments_B,name='get_comments_B'),
+		       url(r'^(?P<id>\d+)/get_comments_C/$',views.get_comments_C,name='get_comments_C'),
+		       url(r'^(?P<id>\d+)/get_comments_D/$',views.get_comments_D,name='get_comments_D'),
+		       
+		       
+		       
+
 			)

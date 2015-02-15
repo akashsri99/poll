@@ -57,8 +57,20 @@ def reason_opt(request,id):
 
 		return render(request,'urpoll/details.html',{})
 
-def get_comments(request,id1,id2):
+def get_comments_A(request,id):
 	c=comment_A.objects.filter(question=id)
+	return render(request,'urpoll/blank.html',{'comments':c})
+
+def get_comments_B(request,id):
+	c=comment_B.objects.filter(question=id)
+	return render(request,'urpoll/blank.html',{'comments':c})
+
+def get_comments_C(request,id):
+	c=comment_C.objects.filter(question=id)
+	return render(request,'urpoll/blank.html',{'comments':c})
+
+def get_comments_D(request,id):
+	c=comment_D.objects.filter(question=id)
 	return render(request,'urpoll/blank.html',{'comments':c})
 
 
