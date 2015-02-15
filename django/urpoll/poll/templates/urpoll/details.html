@@ -19,8 +19,9 @@
   </style>
 <script>  
         $(document).ready(function() {
-            $('#form').html('<img src="http://preloaders.net/preloaders/287/Filling%20broken%20ring.gif"> loading...');
+
             $('#form').ajaxForm(function() {
+              $('#form').html('<img src="http://preloaders.net/preloaders/287/Filling%20broken%20ring.gif"> loading...');
               $('#prblm1').hide();
               $('#prblm2').hide();
               $('#prblm3').hide();
