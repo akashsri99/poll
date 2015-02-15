@@ -124,6 +124,17 @@ function radioclick(val)
     $("#test1").html("Why D ? ");
   }
 }
+$('#form2').click(function()
+              {
+                $('#panel').html('<img src="http://preloaders.net/preloaders/287/Filling%20broken%20ring.gif"> ');
+                $.ajax({
+                  type:"POST",
+                  success:function(d)
+                  {
+                    alert(Thank You);
+                  }
+                });
+                });
 
 </script>
 <div id="panel">   
