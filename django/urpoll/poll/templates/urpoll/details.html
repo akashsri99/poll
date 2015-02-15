@@ -207,12 +207,6 @@ $(document).ajaxStart(function()
 </div>
 <span id="spinner"><img src="{{ STATIC_URL }}spinner.gif"/></span>
 <div id="results">
-{% if comments %}
-{% for comment in comments %}
-{{ comment.text }}
-<br>
-{% endfor %}
- {% endif %}
 
   <div>
 

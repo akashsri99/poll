@@ -1,12 +1,11 @@
 {% if comments %}
-<table width=100%>
+<table width="100%">
 {% for comment in comments %}
 <tr><td>
 {{ comment.text }}
 
 </td></tr>
 
-<br>
 {% endfor %}
 </table>
  {% endif %}
