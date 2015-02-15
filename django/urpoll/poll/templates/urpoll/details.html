@@ -124,7 +124,7 @@ function radioclick(val)
     $("#test1").html("Why D ? ");
   }
 }
-$('#form2').submit(function(e)
+/*$('#form2').submit(function(e)
               {
                 $('#panel').html('<img src="http://preloaders.net/preloaders/287/Filling%20broken%20ring.gif"> ');
                 $.ajax({
@@ -139,7 +139,15 @@ $('#form2').submit(function(e)
                 e.preventDefault();
                 e.unbind();
 
+                });*/
+
+ $(document).ready(function() {
+
+            $('#form2').ajaxForm(function() {
+              $('#panel').slideUp("slow");
                 });
+          });
+
 
 </script>
 <div id="panel">   
