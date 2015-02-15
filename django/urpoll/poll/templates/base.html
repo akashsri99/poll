@@ -15,10 +15,20 @@
   <h1><a href="{% url 'index'  %}">Your Poll</a></h1>
 </div>
 <div id="gutter"></div>
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="620242897744-g1vdjvkh4o8j3t8odp30oukv1vh7g9tm.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schema.org/AddAction"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span>
 
 <!-- Menu Bar -->
 <div id="col1">
-  <h2>Recent Posts</h2>
+  <h2>Categories</h2>
   <div id="navcontainer">
     <ul >
       {% if category  %}
