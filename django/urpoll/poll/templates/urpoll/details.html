@@ -162,22 +162,38 @@ function radioclick(val)
 <script>
 $(document).ready(function()
 {
-$('#test').click(function()
+  /* clicking A */
+$('#opt1').click(function()
 {
-  
-$('#results').html( '&nbsp;').load('{% url 'get_comments' details.id %}');
+$('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
 });
+ /* Clicking B */
+ $('#opt2').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_B' details.id %}');
+});
+
+$('#opt3').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_C' details.id %}');
+});
+
+$('#opt4').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
+});
+
 });
 </script>
 
 <div id="graph"></div>
 <div id="topnav">
   <ul id="topnavlist">
-    <li><a class="active" id="test"> A</a></li>
-    <li><a href="#">B</a></li>
-    <li><a  href="#">C</a></li>
+    <li><a class="active" id="opt1"> A</a></li>
+    <li><a href="#" id="opt2">B</a></li>
+    <li><a  href="#" id="opt3">C</a></li>
 
-    <li><a  href="#">D</a></li>
+    <li><a  href="#" id="opt4">D</a></li>
 
 
   </ul>
