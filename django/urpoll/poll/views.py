@@ -40,8 +40,8 @@ def submit_form(request,id):
 
 def reason_opt(request,id):
 		ques=Question.objects.get(pk=id)
-		ans1=request.POST['ans']
-		ctext=request.POST['text']
+		ans1=request.POST.get('ans')
+		ctext=request.POST.get('text')
 		if ans1=="1":
 			c=comment_A(question=ques,userid="1",text=ctext)
 			c.save()
