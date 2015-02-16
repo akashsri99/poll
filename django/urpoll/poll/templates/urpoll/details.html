@@ -150,14 +150,15 @@ function radioclick(val)
 
 
 </script>
-<div id="panel" >   
+<div id="panel" >  
+<h2 id="test1"></h2> 
 <form action="{% url 'reason_opt' details.id %}" method="POST" id="form2">
   {% csrf_token %}
-<h2 id="test1"></h2><input type="hidden"  id="result" name="ans" />
+<input type="hidden"  id="result" name="ans" />
 
 <textarea rows="4" cols="50" name="test" ></textarea>
 <br>
-  <input type="Submit" name="Submit">
+<input type="Submit" name="Submit">
 </form>
 </div>
 <script>
