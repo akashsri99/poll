@@ -114,16 +114,21 @@ function radioclick(val)
   }
   if(val==2)
   {
-    $("#test1").html("Why  B  ? ");
+    $("#test1").html('Do you want to tell "Why  B  ?" ' );
   }
   if(val==3)
   {
-    $("#test1").html("Why  C  ? ");
+    $("#test1").html('Do you want to tell "Why  C  ?" ' );
   }
   if(val==4)
   {
-    $("#test1").html("Why D ? ");
+    $("#test1").html('Do you want to tell "Why  D  ?" ' );
   }
+}
+function hidefunc()
+{
+  $('#panel').slideUp("slow");
+
 }
 /*$('#form2').submit(function(e)
               {
@@ -159,7 +164,8 @@ function radioclick(val)
 
 <textarea rows="4" cols="50" name="test" ></textarea>
 <br>
-<input type="Submit" name="Submit">
+<input type="Submit" name="Submit My Reason">
+<button id="nothnks" onclick="hidefunc">No Thanks!!</button>
 </form>
 </div>
 <script>
