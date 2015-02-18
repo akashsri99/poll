@@ -125,6 +125,12 @@ function radioclick(val)
     $("#test1").html('Do you want to tell "Why  D  ?" ' );
   }
 }
+$(document).ready(function() {
+
+            $('#form2').ajaxForm(function() {
+              $('#panel').slideUp("slow");
+                });
+          });
 function hidefunc()
 {
   $('#panel').slideUp("slow");
@@ -147,12 +153,7 @@ function hidefunc()
 
                 });*/
 
- $(document).ready(function() {
-
-            $('#form2').ajaxForm(function() {
-              $('#panel').slideUp("slow");
-                });
-          });
+ 
 
 
 </script>
