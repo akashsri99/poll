@@ -81,13 +81,13 @@
 <h1>{{ reasons }}</h1>
 {% endif %}
 {% if details %}
-<h2>{{ details.question }} </h2>
+<h2 align="center">{{ details.question }} </h2>
 <div class="message"></div>
 <div class="toggle_container">
 <div class="block">
  <form  action="{% url 'submit_form' details.id %}" method="POST" id="form">
 {% csrf_token %}
-<table style="width:100%">
+<table style="width:100%" align="center">
   <tr>
 <td><label>A:</label><input type="radio" name="choice" id="prblm1" onclick="radioclick(this.value)"  value="1" /><label>{{ details.option1 }}</label></td>
 <td><label>B:</label><input type="radio" name="choice" id="prblm2" onclick="radioclick(this.value)"  value="2" /><label>{{ details.option2}}</label></td>
