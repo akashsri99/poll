@@ -46,7 +46,7 @@
     </script>
     <script >
         $(document).ready(function() {
-            $('#form').ajaxForm(function() {
+            $('#form1').ajaxForm(function() {
               alert("Success");
             });
 </script>
@@ -55,7 +55,7 @@
 <pre>
 {{ details.question  }}
 </pre>
-<form role="form" action="{% url 'submit_form' details.id %}" method="POST" id="form">
+<form role="form" action="{% url 'submit_form' details.id %}" method="POST" id="form1">
     {% csrf_token %}
     <div class="form-group">
   
