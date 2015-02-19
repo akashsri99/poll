@@ -3,6 +3,11 @@
 {%block content %}
 
 {% if details %}
+<style >
+.borderless td {
+    border: none;
+}
+</style>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
 <script src="http://malsup.github.com/jquery.form.js"></script> 
@@ -63,7 +68,7 @@
     {% csrf_token %}<!-- 
     <div class="form-group"> -->
   
-      <table class="table ">
+      <table class="table borderless">
     <tbody>
       <tr>
         <td> <label>A</label>&nbsp;&nbsp;<input type="radio" value="1" name="optradio">&nbsp;&nbsp;<label>{{ details.option1 }}</label>
