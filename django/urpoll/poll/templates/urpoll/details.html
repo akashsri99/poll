@@ -48,6 +48,30 @@
 <pre>
 {{ details.question  }}
 </pre>
+<form role="form" action="{% url 'submit_form' details.id %}" method="POST" id="form">
+    {% csrf_token %}
+    <div class="form-group">
+  
+      <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td> <label>A</label<input type="radio" name="optradio"><label>{{ details.option1 }}/label>
+    </td>
+        <td> <label>B</label><input type="radio" name="optradio"><label>{{ details.option2 }}</label>
+    </td>
+       </tr>
+      <tr>
+        <td> <label>C</label><input type="radio" name="optradio" /><label>{{ details.option3 }}</label>
+    </td>
+        <td> <label>D</label><input type="radio" name="optradio"/><label>{{ details.option4 }}</label>
+    </td>
+       </tr>
+      </tbody>
+  </table>
+      
+    <button type="submit" class="btn btn-default btn-sm">Submit</button>
+        </div>
+      </form>
 </div>
 
 {% endif %}  
