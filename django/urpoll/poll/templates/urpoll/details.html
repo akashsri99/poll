@@ -56,28 +56,28 @@
 {{ details.question  }}
 </pre>
 <form role="form" action="{% url 'submit_form' details.id %}" method="POST" id="form1">
-    {% csrf_token %}
-    <div class="form-group">
+    {% csrf_token %}<!-- 
+    <div class="form-group"> -->
   
       <table class="table table-striped">
     <tbody>
       <tr>
-        <td> <label>A</label>&nbsp;&nbsp;<input type="radio" name="optradio">&nbsp;&nbsp;<label>{{ details.option1 }}</label>
+        <td> <label>A</label>&nbsp;&nbsp;<input type="radio" value="1" name="optradio">&nbsp;&nbsp;<label>{{ details.option1 }}</label>
     </td>
-        <td> <label>B</label>&nbsp;&nbsp;<input type="radio" name="optradio">&nbsp;&nbsp;<label>{{ details.option2 }}</label>
+        <td> <label>B</label>&nbsp;&nbsp;<input type="radio" value="2" name="optradio">&nbsp;&nbsp;<label>{{ details.option2 }}</label>
     </td>
        </tr>
       <tr>
-        <td> <label>C</label>&nbsp;&nbsp;<input type="radio" name="optradio" />&nbsp;&nbsp;<label>{{ details.option3 }}</label>
+        <td> <label>C</label>&nbsp;&nbsp;<input type="radio" value="3" name="optradio" />&nbsp;&nbsp;<label>{{ details.option3 }}</label>
     </td>
-        <td> <label>D</label>&nbsp;&nbsp;<input type="radio" name="optradio"/>&nbsp;&nbsp;<label>{{ details.option4 }}</label>
+        <td> <label>D</label>&nbsp;&nbsp;<input type="radio"  value="4" name="optradio"/>&nbsp;&nbsp;<label>{{ details.option4 }}</label>
     </td>
        </tr>
       </tbody>
   </table>
+     
+<input type="submit" value="Vote"  class="btn btn-default btn-sm" /> 
       
-    <input type="submit" id="signin_button" class="btn btn-default btn-sm">Submit</input>
-        </div>
       </form>
 </div>
 
