@@ -1,12 +1,17 @@
+  <div class="media col-md-8">
 {% if comments %}
-<table width="100%" border=".5" cellpadding="20">
-{% for comment in comments %}
-<tr><td>
-<font size="+0.5">
-{{ comment.text }}
-</font
-</td></tr>
-
-{% endfor %}
+ {% for comment in comments %}
+ 
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+   {{ comment.text }}
+  </div>
+  {% endfor %}
 </table>
  {% endif %}
+
+</div>
