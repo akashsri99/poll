@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% load staticfiles %}
+<head>
+  <!--Google + -->
+  <script src="https://apis.google.com/js/client:platform.js" async defer></script>
+  <!-- Google+ ends -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="{% static 'jquery-1.11.2.js' %}"></script>
+ 
+<title>Your Polls</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="{% static 'urpoll/style.css' %}" />
+</head>
+<body>
+<div id="header">
+  <h1><a href="{% url 'index'  %}">Your Poll</a></h1>
+</div>
+<script>
+function signinCallback(authResult) {
+  if (authResult['status']['signed_in']) {
+    // Update the app to reflect a signed in user
+    // Hide the sign-in button now that the user is authorized, for example:
+    document.getElementById('signinButton').setAttribute('style', 'display: none');
+    var idToken = authResult['id'];
+    $('#g').html=idToken;
+if (idToken) {
+alert(idToken);
+            }
+  } else {
+    console.log('Sign-in state: ' + authResult['error']);
+  }
+}
+</script>
+
+<div id="gutter"></div>
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="620242897744-g1vdjvkh4o8j3t8odp30oukv1vh7g9tm.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schema.org/AddAction"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span>
+
+<!-- Menu Bar -->
+<div id="col1">
+  <h2 id="g"></h2>
+  <h2>Categories</h2>
+  <div id="navcontainer">
+    <ul >
+      {% if category  %}
+      {% for c in category %}
+          <li><a href="{% url 'cat' c.id %}" >{{ c.Name }}</a></li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+  
+</div>
+
+
+<!-- Main Content -->
+
+<div id="col2">
+{% block content %}
+{% endblock %}
+</div>
+
+<!-- Sidebar -->
+
+<div id="col3">
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+  <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+</div>
+<div id="footer"> </div>
+</body>
+</html>
+
