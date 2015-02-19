@@ -40,8 +40,13 @@
       
        
     </script>
+<div class="col-md-10">
+  {% if details %}
+<pre>
+{{ details.question  }}
+</pre>
 
-<div class="col-md-8" id="graph"></div>
+<div class="col-md-10" id="graph"></div>
 
    
 {% endblock %}
