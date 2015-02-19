@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{%block content %}
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
      google.load('visualization', '1.0', {'packages':['corechart']});
@@ -40,13 +39,15 @@
       
        
     </script>
-<div class="col-md-10">
+
+{%block content %}
+<div class="col-md-9">
   {% if details %}
 <pre>
 {{ details.question  }}
 </pre>
 {% endif %}
-<div class="col-md-10" id="graph"></div>
+<div class="col-md-9" id="graph"></div>
 
    
 {% endblock %}
