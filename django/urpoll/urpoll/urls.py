@@ -8,7 +8,6 @@ urlpatterns = patterns('',
     url(r'^$',RedirectView.as_view(url='http://upollet.com/home'),name='home'),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^home/',include('poll.urls')),
     
 
 )
