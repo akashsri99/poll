@@ -100,7 +100,11 @@ $(document).ready(function() {
               $('#comment').slideUp("slow");
                 });
           });
- 
+function hidep()
+{
+  $('#comment').slideUp("slow");
+              
+}
 function radioclick(val)
 {
   document.getElementById("result").value=val;
@@ -115,6 +119,8 @@ function radioclick(val)
       <input type="hidden"  id="result" name="ans" />
       <textarea class="form-control" rows="3" id="comments" name="test" placeholder="Do you want to tell te reason" ></textarea>
     <input type="submit"   class="btn btn-primary" Value="Post a Comment" />
+    <button type="button" class="btn btn-default" onclick="hidep()">No Thanks</button>
+  
      </div>
 </form>
 </div>
