@@ -128,7 +128,26 @@ function radioclick(val)
 <div class="col-md-8" id="graph"></div>
 </div>
 <div class="col-md-4" id="sidebar">
-  <button type="button" class="btn btn-primary" >Add a Question</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Add a Question</button>
+<!-- Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        This will be a form
+      </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal ends -->
+
+
+
+
    <h4>Similar Pollings</h4>
    <ul>
    {% if related %}
