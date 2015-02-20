@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'poll',
-    'social-auth',
+    'django-social-auth',
 )
 
 MIDDLEWARE_CLASSES = (
