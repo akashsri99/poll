@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 from django.template import RequestContext,loader
 from poll.models import category,Question,comment_A,comment_B,comment_C,comment_D
-
+import datetime
 def index(request):
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.order_by('-date')
@@ -80,7 +80,7 @@ def get_comments_D(request,id):
 
 def submit_question(request,id):
 	c=category.objects.get(Name=request.POST.get('Category'))
-	q=Question(category=c,question=request.POST.get('question'),option1=request.POST.get('opA'),option2=request.POST.get('opB'),option3=request.POST.get('opC'),option4=request.POST.get('opD'))
+	q=Question(category=c,question=request.POST.get('question'),date=datetime.datetime.now(),option1=request.POST.get('opA'),option2=request.POST.get('opB'),option3=request.POST.get('opC'),option4=request.POST.get('opD'))
 	q.save()
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.order_by('-date')
