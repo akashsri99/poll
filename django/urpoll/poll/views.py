@@ -39,7 +39,7 @@ def submit_form(request,id):
 	details.save()
 	reason=request.POST.get('reason')
 
-	return render(request,'urpoll/details.html',{'details':details,,'related':related})
+	return render(request,'urpoll/details.html',{'details':details,'related':related})
 
 def reason_opt(request,id):
 		ques=Question.objects.get(pk=id)
