@@ -106,7 +106,7 @@ $(document).ready(function() {
 </script>
 
 <div id="comment">
-<form role="form" action="{% url 'reason_opt' details.id %}" method="POST" >
+<form role="form" action="{% url 'reason_opt' details.id %}" method="POST" id="form2" >
   {% csrf_token %}
     <div class="form-group">
       <label for="comment">Comment:</label>
