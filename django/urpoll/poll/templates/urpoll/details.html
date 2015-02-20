@@ -93,16 +93,16 @@
 <input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" /> 
 </form>
 <script >
-function radioclick(val)
-{
-  document.getElementById("result").value=val;
-}
 $(document).ready(function() {
-
             $('#form2').ajaxForm(function() {
               $('#comment').slideUp("slow");
                 });
           });
+ 
+function radioclick(val)
+{
+  document.getElementById("result").value=val;
+}
 </script>
 
 <div id="comment">
