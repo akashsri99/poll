@@ -79,7 +79,7 @@ def get_comments_D(request,id):
 
 
 def submit_question(request,id):
-	q=Question(category=request.POST.get('choice'),question=request.POST.get('question'),option1=request.POST.get('opA'),option2=request.POST.get('opB'),option3=request.POST.get('opC'),option4=request.POST.get('opD'))
+	q=Question(category=request.POST.get('category'),question=request.POST.get('question'),option1=request.POST.get('opA'),option2=request.POST.get('opB'),option3=request.POST.get('opC'),option4=request.POST.get('opD'))
 	q.save()
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.order_by('-date')
