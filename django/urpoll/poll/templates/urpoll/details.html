@@ -105,8 +105,8 @@
    <h4>Similar Pollings</h4>
    <ul>
    {% if related %}
-   {% for ques in realted %}
-   <li>ques.question</li>
+   {% for r in related %}
+   <li>r.question</li>
    {% endfor %}
    {% endif %}
  </ul>
