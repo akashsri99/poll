@@ -37,7 +37,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'poll',
-    'django-social-auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,17 +48,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
-GOOGLE_OAUTH2_CLIENT_ID='620242897744-g1vdjvkh4o8j3t8odp30oukv1vh7g9tm.apps.googleusercontent.com'
-GOOGLE_OAUTH2_CLIENT_SECRET='ecaQ47nhJG_J5WbO2p7HEwWj'
-
-
-LOGIN_REDIRECT_URL='/'
-AUTHENTICATION_BACKENDS=(
-    'social-auth.backends.google.GoogleOAuth2Backend',
-    'django.contrib.auth.backends.ModelBackend',
-    )
-
 
 ROOT_URLCONF = 'urpoll.urls'
 
