@@ -131,7 +131,75 @@ $(document).ready(function() {
  </ul>
 <div>
 {% endif %}
+{% endblock %}
+
+ {% block comment %} 
+<div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="nav nav-pills">
+            <li class="active" >
+              <a href="#results" id="opt1">A</a>
+            </li>
+            <li>
+              <a href="#results" id="opt2">B</a>
+            </li>
+            <li>
+              <a href="#results" id="opt3">C</a>
+            </li>
+             <li>
+              <a href="#results" id="opt4">D</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+
+<br>
+<br>
+  <div align="center">
+<span id="spinner"><img src="{{ STATIC_URL }}spinner.gif" align="middle" /></span>
+</div>
+
+  <div id="results">
+
+  <div>
+<script>
+$(document).ready(function()
+{
+  $('#spinner').hide();
+  /* clicking A */
+$('#opt1').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
+});
+ /* Clicking B */
+ $('#opt2').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_B' details.id %}');
+});
+
+$('#opt3').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_C' details.id %}');
+});
+
+$('#opt4').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
+});
+
+$(document).ajaxStart(function()
+{
+  $('#spinner').show();
+}).ajaxStop(function()
+{
+  $('#spinner').hide();
+})
+});
+</script>
 
 
 
+ 
 {% endblock %}
