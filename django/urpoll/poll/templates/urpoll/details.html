@@ -140,6 +140,22 @@ function radioclick(val)
 <!-- form for Adding a question-->
 <form role="form" action="" method="POST" id="addQuestion" >
   {% csrf_token %}
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Category
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    
+    <li role="presentation">Entertainment</li>
+
+    <li role="presentation">Sports</li>
+    <li role="presentation">Food</li>
+    <li role="presentation">Party</li>
+    <li role="presentation">Technology</li>
+    <li role="presentation">Miscellaneous</li>
+  </ul>
+</div>
     <div class="form-group">
     <label >Question</label>
     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Type your Question here..." />
