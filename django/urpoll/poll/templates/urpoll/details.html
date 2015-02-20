@@ -141,7 +141,7 @@ function radioclick(val)
 <form role="form" action="" method="POST" id="addQuestion" >
   {% csrf_token %}
     <label for="sel1">Select a Category</label>
-      <select class="form-control" id="sel1">
+      <select class="form-control" id="sel1" name="Category">
         <option>Entertainment</option>
         <option>Sports</option>
         <option>Food</option>
@@ -151,7 +151,7 @@ function radioclick(val)
       </select>
     <div class="form-group">
     <label >Question</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Type your Question here..." />
+    <input type="text" class="form-control" id="exampleInputEmail1" name="question" placeholder="Type your Question here..." />
     </div>
   <div class="form-group">
     <label for="exampleInputFile">A</label>
@@ -161,17 +161,17 @@ function radioclick(val)
 
   <div class="form-group">
     <label for="exampleInputFile">B</label>
-    <input type="text" name="opA" placeholder="Option B" />
+    <input type="text" name="opB" placeholder="Option B" />
     
   </div>
   <div class="form-group">
     <label for="exampleInputFile">C</label>
-    <input type="text" name="opA" placeholder="Option C" />
+    <input type="text" name="opC" placeholder="Option C" />
     
   </div>
   <div class="form-group">
     <label for="exampleInputFile">D</label>
-    <input type="text" name="opA" placeholder="Option D" />
+    <input type="text" name="opD" placeholder="Option D" />
     
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
