@@ -103,6 +103,13 @@
 <div class="col-md-2" id="sidebar">
   <button type="button" class="btn btn-primary">Add a Question</button>
    <h4>Similar Pollings</h4>
+   <ul>
+   {% if related %}
+   {% for ques in realted %}
+   <li>ques.question</li>
+   {% endfor %}
+   {% endif %}
+ </ul>
 <div>
 {% endif %}
 
