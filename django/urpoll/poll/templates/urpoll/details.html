@@ -92,6 +92,8 @@
      
 <input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" /> 
 </form>
+
+
 <script >
 $(document).ready(function() {
             $('#form2').ajaxForm(function() {
@@ -111,7 +113,7 @@ function radioclick(val)
     <div class="form-group">
       <label for="comment">Comment:</label>
       <input type="hidden"  id="result" name="ans" />
-      <textarea class="form-control" rows="3" id="comments" name="test"></textarea>
+      <textarea class="form-control" rows="3" id="comments" name="test" label="Do you want to tell te reason"></textarea>
     <input type="submit"   class="btn btn-primary" Value="Post a Comment" />
      </div>
 </form>
@@ -133,7 +135,7 @@ function radioclick(val)
 {% endif %}
 {% endblock %}
 
- {% block comment %} 
+{% block comment %} 
 <div class="container">
       <div class="row">
         <div class="col-md-8">
