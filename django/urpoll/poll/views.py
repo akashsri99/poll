@@ -21,6 +21,8 @@ def detail(request,id):
 
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
+	related=Question.objects.filter(category=details.category)
+	
 	if request.POST.get('choice')=="1":
 		details.vote_1=details.vote_1+1
 		
@@ -37,7 +39,7 @@ def submit_form(request,id):
 	details.save()
 	reason=request.POST.get('reason')
 
-	return render(request,'urpoll/details.html',{'details':details,'reason':reason})
+	return render(request,'urpoll/details.html',{'details':details,,'related':related})
 
 def reason_opt(request,id):
 		ques=Question.objects.get(pk=id)
