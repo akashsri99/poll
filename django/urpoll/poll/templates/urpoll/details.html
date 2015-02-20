@@ -128,7 +128,9 @@ function radioclick(val)
 <div class="col-md-8" id="graph"></div>
 </div>
 <div class="col-md-4" id="sidebar">
-  <p>https://www.googleapis.com/auth/plus.login</p>
+{% people_resource = service.people() %}
+{% people_document = people_resource.get(userId='me').execute() %}
+<p>{{ people_document['displayName'] }}</p>
   <span id="signinButton">
   <span
     class="g-signin"
