@@ -49,6 +49,14 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'social.backends.google.GooglePlusAuth',
+)
+
+SOCIAL_AUTH_GOOGLE_PLUS_KEY = '620242897744-g1vdjvkh4o8j3t8odp30oukv1vh7g9tm.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_PLUS_SECRET = 'ecaQ47nhJG_J5WbO2p7HEwWj'
+
+
 ROOT_URLCONF = 'urpoll.urls'
 
 WSGI_APPLICATION = 'urpoll.wsgi.application'

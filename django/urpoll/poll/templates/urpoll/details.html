@@ -128,6 +128,45 @@ function radioclick(val)
 <div class="col-md-8" id="graph"></div>
 </div>
 <div class="col-md-4" id="sidebar">
+  <div id="signinButton">
+    <span id="signinButton">
+        <span
+            class="g-signin"
+            data-callback="signInCallback"
+            data-clientid="{{ plus_id }}"
+            data-cookiepolicy="single_host_origin"
+            data-requestvisibleactions="http://schemas.google.com/AddActivity"
+            data-scope="https://www.googleapis.com/auth/plus.login">
+        </span>
+    </span>
+</div>
+<!-- Google test -->
+<form id="google-plus" method="post" action="{% url 'social:complete' "google-plus" %}">
+    {% csrf_token %}
+    <input id="at" type="hidden" name="access_token" value="" />
+    <input id="code" type="hidden" name="code" value="" />
+</form>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+<script type="text/javascript">
+var signInCallback = function (result) {
+    if (result['error']) {
+        alert('An error happened:', result['error']);
+    } else {
+        $('#code').attr('value', result['code']);
+        $('#at').attr('value', result['access_token']);
+        $('#google-plus').submit();
+    }
+};
+</script>
+
+<!-- Google test-->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Add a Question</button>
 <!-- Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
