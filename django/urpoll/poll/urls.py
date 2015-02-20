@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 		       url(r'^(?P<id>\d+)/get_comments_B/$',views.get_comments_B,name='get_comments_B'),
 		       url(r'^(?P<id>\d+)/get_comments_C/$',views.get_comments_C,name='get_comments_C'),
 		       url(r'^(?P<id>\d+)/get_comments_D/$',views.get_comments_D,name='get_comments_D'),
-		       url(r'^(?P<id>\d+)/detail/submit_question/$',views.submit_question,name='submit_question'),
+		       url(r'^(?P<id>\d+)/detail/submit_question$',views.submit_question,name='submit_question'),
 		       
 		       
 		       
