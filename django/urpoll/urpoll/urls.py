@@ -9,6 +9,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/',include('poll.urls')),
+    url(r'',include('social_auth.urls')),
     
 
 )
