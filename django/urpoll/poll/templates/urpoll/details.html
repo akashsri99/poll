@@ -134,10 +134,21 @@ function radioclick(val)
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Add a Question</h4>
       </div>
       <div class="modal-body">
-        This will be a form
+<!-- form for Adding a question-->
+<form role="form" action="" method="POST" id="addQuestion" >
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <input type="hidden"  id="result" name="ans" />
+      <textarea class="form-control" rows="3" id="comments" name="test" placeholder="Do you want to tell te reason" ></textarea>
+    <input type="submit"   class="btn btn-primary" Value="Post a Comment" />
+    <button type="button" class="btn btn-default" onclick="hidep()">No Thanks</button>
+  
+     </div>
+</form>
       </div>
       </div>
   </div>
