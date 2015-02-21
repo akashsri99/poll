@@ -93,7 +93,6 @@
 <input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" /> 
 </form>
 
-
 <script >
 $(document).ready(function() {
             $('#form2').ajaxForm(function() {
@@ -124,6 +123,45 @@ function radioclick(val)
      </div>
 </form>
 </div>
+
+
+<!-- Input Validation-->
+$(document).ready(function(){
+$('#form2').formValidation(
+{
+  framework:'bootstrap',
+  icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields:{
+        test:{
+        validators:{
+                    notEmpty:{
+                    message:'Comment cannot be blank'
+                              },
+                    stringLength:
+                    {
+                    min:5,
+                    max:50,
+                    message:'The name must be more than 5 characters and less than 50 characters'
+                    },
+                    regexp: 
+                    {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The comment can only consist of alphabetical, number and underscore'
+                    }
+
+                  }
+              }
+
+            }
+
+});  
+});
+<!-- Input Validation end -->
+
 
 <div class="col-md-8" id="graph"></div>
 </div>
