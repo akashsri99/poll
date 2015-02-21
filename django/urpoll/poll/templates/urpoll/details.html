@@ -128,8 +128,7 @@ function radioclick(val)
 <!-- Input Validation-->
 <script >
 $(document).ready(function(){
-$('#form2').formValidation(
-{
+$('#form2').formValidation(){
   framework:'bootstrap',
   icon: {
             valid: 'glyphicon glyphicon-ok',
@@ -137,7 +136,7 @@ $('#form2').formValidation(
             validating: 'glyphicon glyphicon-refresh'
         },
         fields:{
-        test:{
+          test:{
         validators:{
                     notEmpty:{
                     message:'Comment cannot be blank'
@@ -153,12 +152,8 @@ $('#form2').formValidation(
                         regexp: /^[a-zA-Z0-9_]+$/,
                         message: 'The comment can only consist of alphabetical, number and underscore'
                     }
-
-                  }
+                  }   
               }
-
-            }
-
 });  
 });
 </script>
