@@ -116,10 +116,12 @@ function radioclick(val)
 <div id="comment">
 <form role="form" action="{% url 'reason_opt' details.id %}" method="POST" id="form2" >
   {% csrf_token %}
-    <div class="form-group">
-      <label for="comment">Comment:</label>
+    <div class="control-group">
+      <label for="comment" class="control-label">Comment:</label>
+      <div class="controls">
       <input type="hidden"  id="result" name="ans" />
       <textarea class="form-control" rows="3" id="comments" name="test" placeholder="Do you want to tell te reason" ></textarea>
+    </div>
     <input type="submit"   class="btn btn-primary" Value="Post a Comment" />
     <button type="button" class="btn btn-default" onclick="hidep()">No Thanks</button>
   
@@ -131,33 +133,20 @@ function radioclick(val)
 <!-- Input Validation-->
 <script >
 $(document).ready(function(){
-$('#form2').formValidation(){
-  framework:'bootstrap',
-  icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields:{
-          test:{
-        validators:{
-                    notEmpty:{
-                    message:'Comment cannot be blank'
-                              },
-                    stringLength:
-                    {
-                    min:5,
-                    max:50,
-                    message:'The name must be more than 5 characters and less than 50 characters'
-                    },
-                    regexp: 
-                    {
-                        regexp: /^[a-zA-Z0-9_]+$/,
-                        message: 'The comment can only consist of alphabetical, number and underscore'
-                    }
-                  }   
-              }
-});  
+$('#form2').validate(
+{
+test:{
+  minlength:4,
+  required:true,
+  maxlength:50
+},
+highlight:function(element){
+  $(element).closest('.control-group').removeClass('success').addClass('error');
+},
+success: function(element){
+  element.text('ok').addClass('valid').closest('.control-group').removeClass('error').addClass('success');
+}
+});
 });
 </script>
 <!-- Input Validation end -->
