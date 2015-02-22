@@ -133,12 +133,13 @@ function radioclick(val)
 <!-- Input Validation-->
 <script >
 $(document).ready(function(){
-$('#form2').validator({
+$('#form2').validat({
+onfocusout:true,
 rules:{
   test:{
-  minWords:4,
+  minlength:4,
   required:true,
-  maxWords:50
+  maxlength:50
 },
 highlight:function(element){
   $(element).closest('.control-group').removeClass('success').addClass('error');
