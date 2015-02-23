@@ -213,9 +213,9 @@ function radioclick(val)
 <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <ul class="nav nav-pills">
+          <ul class="nav nav-pills" id="mytab">
             <li class="active" >
-              <a href="#results" id="opt1">A</a>
+              <a href="#results" id="opt1" >A</a>
             </li>
             <li>
               <a href="#results" id="opt2">B</a>
@@ -241,6 +241,9 @@ function radioclick(val)
 
   <div>
 <script>
+$(function(){
+  $('#mytab a:last').tab('show')
+})
 $(document).ready(function()
 {
   $('#spinner').hide();
