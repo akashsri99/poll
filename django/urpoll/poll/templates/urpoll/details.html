@@ -245,6 +245,9 @@ function radioclick(val)
 <script>
 $(document).ready(function()
 {
+  $('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
+$('#opt1').tab('show')
+
   $('#spinner').hide();
   /* clicking A */
 $('#opt1').click(function()
