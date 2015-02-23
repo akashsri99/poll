@@ -148,10 +148,10 @@ function radioclick(val)
       </div>
 <div class="modal-body">
 <!-- form for Adding a question-->
-<form role="form" action="submit_question" method="POST" id="addQuestion"  >
+<form role="form" action="submit_question" method="POST" id="addQuestion"  data-parsley-validate>
   {% csrf_token %}
     <label for="sel1">Select a Category</label>
-      <select class="form-control" id="sel1" name="Category">
+      <select class="form-control" id="sel1" name="Category" >
         <option>Entertainment</option>
         <option>Sports</option>
         <option>Food</option>
@@ -161,27 +161,27 @@ function radioclick(val)
       </select>
     <div class="form-group">
     <label >Question</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="question" placeholder="Type your Question here..." />
+    <input type="text" class="form-control" id="exampleInputEmail1" name="question" placeholder="Type your Question here..."  required />
     </div>
   <div class="form-group">
     <label for="exampleInputFile">A</label>
-    <input type="text" name="opA" placeholder="Option A" />
+    <input type="text" name="opA" placeholder="Option A" required/>
     
   </div>
 
   <div class="form-group">
     <label for="exampleInputFile">B</label>
-    <input type="text" name="opB" placeholder="Option B" />
+    <input type="text" name="opB" placeholder="Option B"  required />
     
   </div>
   <div class="form-group">
     <label for="exampleInputFile">C</label>
-    <input type="text" name="opC" placeholder="Option C" />
+    <input type="text" name="opC" placeholder="Option C"  required />
     
   </div>
   <div class="form-group">
     <label for="exampleInputFile">D</label>
-    <input type="text" name="opD" placeholder="Option D" />
+    <input type="text" name="opD" placeholder="Option D"  required />
     
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
