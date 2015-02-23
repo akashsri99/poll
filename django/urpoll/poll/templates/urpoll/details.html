@@ -201,7 +201,9 @@ function radioclick(val)
    <ul>
    {% if related %}
    {% for r in related %}
+   {% if details.id != r.id %}
    <li><a href="{% url 'detail' r.id %}" >{{ r }}</a></li>
+   {% endif %}
    {% endfor %}
    {% endif %}
  </ul>
