@@ -241,9 +241,6 @@ function radioclick(val)
 
   <div>
 <script>
-$(function(){
-  $('#mytab a:last').tab('show')
-})
 $(document).ready(function()
 {
   $('#spinner').hide();
@@ -251,21 +248,29 @@ $(document).ready(function()
 $('#opt1').click(function()
 {
 $('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
+$('#opt1').tab('show')
+
 });
  /* Clicking B */
  $('#opt2').click(function()
 {
 $('#results').html( '&nbsp;').load('{% url 'get_comments_B' details.id %}');
+$('#opt2').tab('show')
+
 });
 
 $('#opt3').click(function()
 {
 $('#results').html( '&nbsp;').load('{% url 'get_comments_C' details.id %}');
+$('#opt3').tab('show')
+
 });
 
 $('#opt4').click(function()
 {
 $('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
+$('#opt4').tab('show')
+
 });
 
 $(document).ajaxStart(function()
