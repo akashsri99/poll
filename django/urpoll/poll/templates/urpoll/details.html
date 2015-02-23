@@ -71,7 +71,7 @@
 <pre>
 {{ details.question  }}
 </pre>
-<form role="form" action="{% url 'submit_form' details.id %}" method="POST" id="form1" data-parsley-validate >
+<form role="form" action="{% url 'submit_form' details.id %}" method="POST" id="form1"  >
     {% csrf_token %}<!-- 
     <div class="form-group"> -->
   
