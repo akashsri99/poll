@@ -44,6 +44,17 @@
       {% endfor %}
       {% endif %}
          </ul>
+
+      </div>
+      <div class="row col-md-9">
+        {% block content %}
+        {% endblock %}
+      </div>
+      
+      <hr>
+    </div>
+    <div class="row col-md-8">
+      
          <script>
   (function() {
     var cx = '008331300526394667015:aopiaeht0be';
@@ -57,16 +68,6 @@
   })();
 </script>
 <gcse:search></gcse:search>
-
-      </div>
-      <div class="row col-md-9">
-        {% block content %}
-        {% endblock %}
-      </div>
-      
-      <hr>
-    </div>
-    <div class="row col-md-8">
         {% block comment %}
         {% endblock %}
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
