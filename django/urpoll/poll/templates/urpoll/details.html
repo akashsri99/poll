@@ -56,13 +56,14 @@
         $(document).ready(function() {
           $('#comment').hide()
             $('#form1').ajaxForm(function() {
+              $('#comment').slideDown();
               $('#p1').hide();
               $('#p2').hide();
               $('#p3').hide();
               $('#p4').hide();
               $('#p5').hide();
              
-              $('#comment').slideDown();
+              
             });
           });
 </script>
