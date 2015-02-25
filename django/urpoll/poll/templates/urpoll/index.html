@@ -14,7 +14,9 @@
  <div class="col-md-1">
           <a class="btn btn-primary btn-sm" href="{% url 'detail' q.id %}">Go to Polling</a>
  </div> 
- <div class="col-md-4" id="sidebar">
+{% endfor %}
+{% endif %}    
+<div class="col-md-4" id="sidebar">
  <script>
   (function() {
     var cx = '008331300526394667015:aopiaeht0be';
@@ -30,8 +32,7 @@
 <gcse:search></gcse:search>
         
  </div>
- {% endfor %}
-{% endif %}      
+   
 {% endblock %}
 
 
