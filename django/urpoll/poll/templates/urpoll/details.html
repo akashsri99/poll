@@ -20,6 +20,11 @@
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
+      google.setOnLoadCallback(drawChart);
+      var A1={{ details.vote_1 }}
+      var B1={{ details.vote_2 }}
+      var C1={{ details.vote_3 }}
+      var D1={{ details.vote_4 }}
       function drawChart() {
 
         // Create the data table.
@@ -131,15 +136,7 @@ function radioclick(val)
 <!-- Input Validation end -->
 
 
-<div class="col-md-8" id="graph">
-<script >
-      google.setOnLoadCallback(drawChart);
-      var A1={{ details.vote_1 }}
-      var B1={{ details.vote_2 }}
-      var C1={{ details.vote_3 }}
-      var D1={{ details.vote_4 }}
-</script>
-</div>
+<div class="col-md-8" id="graph"></div>
 </div>
 <div class="col-md-4" id="sidebar">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Add a Question</button>
