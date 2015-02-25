@@ -143,7 +143,59 @@ function radioclick(val)
 {% endblock %}
 
 {% block sidebar %}
- 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Add a Question</button>
+<!-- Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add a Question</h4>
+      </div>
+<div class="modal-body">
+<!-- form for Adding a question-->
+<form role="form" action="submit_question" method="POST" id="addQuestion"  data-parsley-validate>
+  {% csrf_token %}
+    <label for="sel1">Select a Category</label>
+      <select class="form-control" id="sel1" name="Category" >
+        <option>Entertainment</option>
+        <option>Sports</option>
+        <option>Food</option>
+        <option>Party</option>
+        <option>Technology</option>
+        <option>Miscellaneous</option>
+      </select>
+    <div class="form-group">
+    <label >Question</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="question" placeholder="Type your Question here..."  required required data-parsley-minlength=10 data-parsley-maxlength=200 />
+    </div>
+  <div class="form-group">
+    <label for="exampleInputFile">A</label>
+    <input type="text" name="opA" placeholder="Option A" required   data-parsley-maxlength=50 />
+    
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputFile">B</label>
+    <input type="text" name="opB" placeholder="Option B"  required  data-parsley-maxlength=50  />
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">C</label>
+    <input type="text" name="opC" placeholder="Option C"  required  data-parsley-maxlength=50  />
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">D</label>
+    <input type="text" name="opD" placeholder="Option D"  required   data-parsley-maxlength=50  />
+    
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+      </div>
+      </div>
+  </div>
+</div>
+
 <!-- Modal ends -->
 
 
