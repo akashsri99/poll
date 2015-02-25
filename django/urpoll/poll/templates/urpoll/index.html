@@ -6,7 +6,7 @@
 
 {% for q in ques %}
 
-<div class="col-md-8">
+<div class="col-md-12">
 <pre>
 {{ q.question  }}
 </pre>
@@ -15,7 +15,6 @@
           <a class="btn btn-primary btn-sm" href="{% url 'detail' q.id %}">Go to Polling</a>
  </div> 
 {% endfor %}
-{% endif %}    
 <div class="col-md-3" id="sidebar">
  <script>
   (function() {
@@ -32,6 +31,8 @@
 <gcse:search></gcse:search>
         
  </div>
+{% endif %}    
+
 
 {% endblock %}
 
