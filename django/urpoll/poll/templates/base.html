@@ -24,17 +24,6 @@
 
 </script>
   </head>
-  <style >
-.borderless td {
-    border: none;
-}
-.option td{
-  border-top: none !important;
-}
-.col-md-2{
-  width: :100% !important;
-}
-</style>
 
   
   <body draggable="true">
@@ -45,9 +34,6 @@
         </div>
       </div>
     </div>
-    <div class="navbar navbar-default navbar-static-top navbar-inverse"><div class="container"><div class="navbar-header"><a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></a><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><a class="navbar-brand" href="http://upollet.com/home" >UPollet</a></div><div class="collapse navbar-collapse navbar-ex1-collapse"><ul class="nav navbar-nav navbar-right"><li class="active"><a href="http://upollet.com/home" >Home</a></li><li><a href="#">About UPollet</a></li><li><a href="https://docs.google.com/forms/d/1tS3JTwzNHNF2axAHobjzQ-jWQeoIbdNieL6uCHrlzD8/viewform?usp=send_form" target="_blank">Feedback</a></li></ul></div></div></div>
-
-
     <div class="col-md-12">
       <div class="col-md-2">
         <h3>Categories</h3>
@@ -60,28 +46,28 @@
          </ul>
 
       </div>
-      <div class="row col-md-8">
+      <div class="row col-md-9">
         {% block content %}
         {% endblock %}
       </div>
-      <div class="col-md-2">
-         <script>   
-  (function() {    
-    var cx = '008331300526394667015:aopiaeht0be';    
-    var gcse = document.createElement('script');   
-    gcse.type = 'text/javascript';   
-    gcse.async = true;   
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +   
-        '//www.google.com/cse/cse.js?cx=' + cx;    
-    var s = document.getElementsByTagName('script')[0];    
-    s.parentNode.insertBefore(gcse, s);    
-  })();    
-</script>    
-<gcse:search></gcse:search>
-</div>
-</div>
+      
+      <hr>
+    </div>
     <div class="row col-md-8">
       
+         <script>
+  (function() {
+    var cx = '008331300526394667015:aopiaeht0be';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
         {% block comment %}
         {% endblock %}
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -94,6 +80,7 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
   </body>
+    </div>
 
 
 </html>
