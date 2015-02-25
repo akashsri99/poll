@@ -38,6 +38,27 @@
      --><div class="navbar navbar-default navbar-static-top navbar-inverse"><div class="container"><div class="navbar-header"><a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></a><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><a class="navbar-brand" href="http://upollet.com/home" >UPollet</a></div><div class="collapse navbar-collapse navbar-ex1-collapse"><ul class="nav navbar-nav navbar-right"><li class="active"><a href="http://upollet.com/home" >Home</a></li><li><a href="#">About UPollet</a></li><li><a href="https://docs.google.com/forms/d/1tS3JTwzNHNF2axAHobjzQ-jWQeoIbdNieL6uCHrlzD8/viewform?usp=send_form" target="_blank">Feedback</a></li></ul></div></div></div>
      <!-- fb script -->
      <script>
+     function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1580592518848163',
@@ -58,6 +79,14 @@
     console.log(response.authResponse.accessToken);
   }
 });
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
 </script>
   <!-- fb script ends  -->
     <div class="container-fluid">
@@ -93,7 +122,12 @@
         <gcse:search></gcse:search>
         <br>
         <div class="fb-login-button" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="false"></div>
+        <br>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 
+<div id="status">
+</div>
         {% block sidebar %}
         {% endblock %}
               </div>
