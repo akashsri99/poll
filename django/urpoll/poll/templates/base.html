@@ -47,11 +47,26 @@
          </ul>
 
       </div>
-      <div class="row col-md-10">
+      <div class="row col-md-12">
         {% block content %}
         {% endblock %}
       </div>
-      
+      <div class="col-md-2">
+         <script>   
+  (function() {    
+    var cx = '008331300526394667015:aopiaeht0be';    
+    var gcse = document.createElement('script');   
+    gcse.type = 'text/javascript';   
+    gcse.async = true;   
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +   
+        '//www.google.com/cse/cse.js?cx=' + cx;    
+    var s = document.getElementsByTagName('script')[0];    
+    s.parentNode.insertBefore(gcse, s);    
+  })();    
+</script>    
+-<gcse:search></gcse:search>
+      <div>
+
       <hr>
     </div>
     <div class="row col-md-8">
