@@ -53,6 +53,11 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+  FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log(response.authResponse.accessToken);
+  }
+});
 </script>
   <!-- fb script ends  -->
     <div class="container-fluid">
@@ -86,7 +91,9 @@
           })();
         </script>
         <gcse:search></gcse:search>
+        <br>
         <div class="fb-login-button" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="false"></div>
+
         {% block sidebar %}
         {% endblock %}
               </div>
