@@ -90,7 +90,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response.name + response.id '!';
     });
   }
 </script>
@@ -127,8 +127,7 @@
         </script>
         <gcse:search></gcse:search>
         <br>
-        <div class="fb-login-button" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="false"></div>
-        <br>
+        
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
