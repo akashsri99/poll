@@ -6,7 +6,7 @@
 
 {% for q in ques %}
 
-<div class="col-md-7">
+<div class="col-md-8">
 <pre>
 {{ q.question  }}
 </pre>
@@ -15,22 +15,6 @@
           <a class="btn btn-primary btn-sm" href="{% url 'detail' q.id %}">Go to Polling</a>
  </div> 
 {% endfor %}
-<div class="col-md-2" id="sidebar">
- <script>
-  (function() {
-    var cx = '008331300526394667015:aopiaeht0be';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-        
- </div>
 {% endif %}    
 
 
