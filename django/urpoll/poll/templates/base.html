@@ -59,6 +59,12 @@
         'into Facebook.';
     }
   }
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1580592518848163',
