@@ -138,6 +138,10 @@ function radioclick(val)
 
 <div class="col-md-8" id="graph"></div>
 </div>
+
+{% endif %}
+{% endblock %}
+        
 {% block sidebar %}
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Add a Question</button>
 <!-- Modal-->
@@ -191,8 +195,6 @@ function radioclick(val)
       </div>
   </div>
 </div>
-{% endblock %}
-        
 
 <!-- Modal ends -->
 
@@ -210,7 +212,6 @@ function radioclick(val)
    {% endif %}
  </ul>
 <div>
-{% endif %}
 {% endblock %}
 
 {% block comment %} 
