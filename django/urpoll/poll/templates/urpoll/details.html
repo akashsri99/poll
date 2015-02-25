@@ -138,7 +138,7 @@ function radioclick(val)
 
 <div class="col-md-8" id="graph"></div>
 </div>
-<div class="col-sm-4" id="sidebar">
+{% block sidebar %}
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Add a Question</button>
 <!-- Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -191,6 +191,8 @@ function radioclick(val)
       </div>
   </div>
 </div>
+{% endblock %}
+        
 
 <!-- Modal ends -->
 
