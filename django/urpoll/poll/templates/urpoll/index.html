@@ -5,12 +5,12 @@
 {% if ques %}
 {% for q in ques %}
 
-<div class="col-md-12">
+<div class="col-md-8">
 <pre>
 {{ q.question  }}
 </pre>
 </div>
- <div class="col-md-1">
+ <div class="col-md-2">
           <a class="btn btn-primary btn-sm" href="{% url 'detail' q.id %}">Go to Polling</a>
  </div> 
 {% endfor %}
