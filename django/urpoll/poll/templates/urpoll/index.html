@@ -5,7 +5,7 @@
 {% if ques %}
 
 {% for q in ques %}
-<div>
+
 <div class="col-md-8">
 <pre>
 {{ q.question  }}
@@ -14,11 +14,8 @@
  <div class="col-md-1">
           <a class="btn btn-primary btn-sm" href="{% url 'detail' q.id %}">Go to Polling</a>
  </div> 
- <div class="col-md-4" id="sidebar">
-<div>
- </div>
+ 
  {% endfor %}
-
 {% endif %}      
 {% endblock %}
 
