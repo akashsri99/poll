@@ -2,6 +2,7 @@
   
   <head>
     <link rel="icon" type="image/png" href="{{ STATIC_URL }}logo.jpg"/>
+    <script type="text/javascript" src="{{STATIC_URL}}apps.js"></script>
     <meta charset="utf-8">
     <title>UPollet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,87 +15,11 @@
     <script  src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script  type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script  type="text/javascript" src="http://parsleyjs.org/dist/parsley.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-60074856-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
   </head>
 
   
   <body draggable="true">
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1><a href="http://upollet.com/home" >UPollet</a></h1>
-        </div>
-      </div>
-    </div>
-     --><div class="navbar navbar-default navbar-static-top navbar-inverse"><div class="container"><div class="navbar-header"><a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></a><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><a class="navbar-brand" href="http://upollet.com/home" >UPollet</a></div><div class="collapse navbar-collapse navbar-ex1-collapse"><ul class="nav navbar-nav navbar-right"><li class="active"><a href="http://upollet.com/home" >Home</a></li><li><a href="#">About UPollet</a></li><li><a href="https://docs.google.com/forms/d/1tS3JTwzNHNF2axAHobjzQ-jWQeoIbdNieL6uCHrlzD8/viewform?usp=send_form" target="_blank">Feedback</a></li></ul></div></div></div>
-     <!-- fb script -->
-     <script>
-     function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
-
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1580592518848163',
-      xfbml      : true,
-      version    : 'v2.2'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-  FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    console.log(response.authResponse.accessToken);
-  }
-});
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + response.id +'!';
-    });
-  }
-</script>
-  <!-- fb script ends  -->
+     <div class="navbar navbar-default navbar-static-top navbar-inverse"><div class="container"><div class="navbar-header"><a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></a><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><a class="navbar-brand" href="http://upollet.com/home" >UPollet</a></div><div class="collapse navbar-collapse navbar-ex1-collapse"><ul class="nav navbar-nav navbar-right"><li class="active"><a href="http://upollet.com/home" >Home</a></li><li><a href="#">About UPollet</a></li><li><a href="https://docs.google.com/forms/d/1tS3JTwzNHNF2axAHobjzQ-jWQeoIbdNieL6uCHrlzD8/viewform?usp=send_form" target="_blank">Feedback</a></li></ul></div></div></div>
     <div class="container-fluid">
         <div class="row-fluid">
               <div class="col-sm-2">
