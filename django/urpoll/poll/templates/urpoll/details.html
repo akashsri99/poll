@@ -51,23 +51,7 @@
       
        
     </script>
-    <script >
-        $(document).ready(function() {
-          $('#comment').hide()
-            $('#form1').ajaxForm(function() {
-              $('#comment').slideDown();
-              $('#p1').hide();
-              $('#p2').hide();
-              $('#p3').hide();
-              $('#p4').hide();
-              $('#p5').hide();
-             
-              
-            });
-          });
-        
-</script>
-
+    
 <div class="col-sm-12">
 <pre>
 {{ details.question  }}
@@ -96,28 +80,6 @@
 <input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" onclick="slider" /> 
 </form>
 
-<script >
-$(document).ready(function() {
-  $('#p5').hide();
-            $('#form2').ajaxForm(function() {
-              $('#comment').slideUp("slow");
-                });
-          });
-function hidep()
-{
-  $('#comment').slideUp("slow");
-              
-}
-function radioclick(val)
-{
-  document.getElementById("result").value=val;
-  $('#p5').show();
-}
-function slider()
-{
-  $('#comment').slideDown();
-}
-</script>
 
 <div id="comment">
 <form role="form" action="{% url 'reason_opt' details.id %}" method="POST" id="form2" data-parsley-validate>
@@ -246,51 +208,5 @@ function slider()
 </div>
 
   <div id="results"></div>
-<script>
-$(document).ready(function()
-{
-  $('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
-$('#opt1').tab('show')
-
-  $('#spinner').hide();
-  /* clicking A */
-$('#opt1').click(function()
-{
-$('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
-$('#opt1').tab('show')
-
-});
- /* Clicking B */
- $('#opt2').click(function()
-{
-$('#results').html( '&nbsp;').load('{% url 'get_comments_B' details.id %}');
-$('#opt2').tab('show')
-
-});
-
-$('#opt3').click(function()
-{
-$('#results').html( '&nbsp;').load('{% url 'get_comments_C' details.id %}');
-$('#opt3').tab('show')
-
-});
-
-$('#opt4').click(function()
-{
-$('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
-$('#opt4').tab('show')
-
-});
-
-$(document).ajaxStart(function()
-{
-  $('#spinner').show();
-}).ajaxStop(function()
-{
-  $('#spinner').hide();
-})
-});
-</script>
-
  
 {% endblock %}

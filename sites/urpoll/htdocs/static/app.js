@@ -64,4 +64,99 @@
   }
 
   <!-- fb script ends  -->
+  <!--Google search -->
+           (function() {
+            var cx = '008331300526394667015:aopiaeht0be';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        
+  <!-- google search ends -->
+  <!-- App Scripts-->
+
+        $(document).ready(function() {
+          $('#comment').hide()
+            $('#form1').ajaxForm(function() {
+              $('#comment').slideDown();
+              $('#p1').hide();
+              $('#p2').hide();
+              $('#p3').hide();
+              $('#p4').hide();
+              $('#p5').hide();
+             
+              
+            });
+          });
+        
+$(document).ready(function() {
+  $('#p5').hide();
+            $('#form2').ajaxForm(function() {
+              $('#comment').slideUp("slow");
+                });
+          });
+function hidep()
+{
+  $('#comment').slideUp("slow");
+              
+}
+function radioclick(val)
+{
+  document.getElementById("result").value=val;
+  $('#p5').show();
+}
+function slider()
+{
+  $('#comment').slideDown();
+}
+
+$(document).ready(function()
+{
+  $('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
+$('#opt1').tab('show')
+
+  $('#spinner').hide();
+  /* clicking A */
+$('#opt1').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_A' details.id %}');
+$('#opt1').tab('show')
+
+});
+ /* Clicking B */
+ $('#opt2').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_B' details.id %}');
+$('#opt2').tab('show')
+
+});
+
+$('#opt3').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_C' details.id %}');
+$('#opt3').tab('show')
+
+});
+
+$('#opt4').click(function()
+{
+$('#results').html( '&nbsp;').load('{% url 'get_comments_D' details.id %}');
+$('#opt4').tab('show')
+
+});
+
+$(document).ajaxStart(function()
+{
+  $('#spinner').show();
+}).ajaxStop(function()
+{
+  $('#spinner').hide();
+})
+});
+
+
     
