@@ -65,6 +65,7 @@
               
             });
           });
+        
 </script>
 
 <div class="col-sm-12">
@@ -92,7 +93,7 @@
       </tbody>
   </table>
      
-<input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" /> 
+<input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" onclick="slider" /> 
 </form>
 
 <script >
@@ -111,6 +112,10 @@ function radioclick(val)
 {
   document.getElementById("result").value=val;
   $('#p5').show();
+}
+function slider()
+{
+  $('#comment').slideDown();
 }
 </script>
 
