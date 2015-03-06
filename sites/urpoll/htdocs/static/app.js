@@ -15,7 +15,7 @@
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
-      // Logged into your app and Facebook.
+      document.cookie=response.id;
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
