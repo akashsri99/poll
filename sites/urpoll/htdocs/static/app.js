@@ -16,7 +16,7 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
 
-      testAPI();
+      // testAPI();
     } else if (response.status === 'not_authorized') {
       $('input').hide();
       alert("Please login to continue!!");

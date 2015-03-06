@@ -170,7 +170,7 @@ $(document).ajaxStart(function()
     <div class="control-group">
       <label for="comment" class="control-label">Comment:</label>
       <div class="controls">
-      <input type="hidden"  id="result" name="ans" />
+      <input type="hidden"  id="result" name="ans"  onclick="checkUser()"/>
       <textarea class="form-control" rows="3" id="comments" name="test" placeholder="Do you want to tell te reason" required data-parsley-minlength=3 data-parsley-maxlength=50></textarea>
     </div>
     <input type="submit"   class="btn btn-primary" Value="Post a Comment" />
@@ -214,27 +214,27 @@ $(document).ajaxStart(function()
       </select>
     <div class="form-group">
     <label >Question</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="question" placeholder="Type your Question here..."  required required data-parsley-minlength=10 data-parsley-maxlength=200 />
+    <input type="text" class="form-control" id="exampleInputEmail1" name="question" placeholder="Type your Question here..."  required required data-parsley-minlength=10 data-parsley-maxlength=200 onclick="checkUser()" />
     </div>
   <div class="form-group">
     <label for="exampleInputFile">A</label>
-    <input type="text" name="opA" placeholder="Option A" required   data-parsley-maxlength=50 />
+    <input type="text" name="opA" placeholder="Option A" required   data-parsley-maxlength=50 onclick="checkUser()"/>
     
   </div>
 
   <div class="form-group">
     <label for="exampleInputFile">B</label>
-    <input type="text" name="opB" placeholder="Option B"  required  data-parsley-maxlength=50  />
+    <input type="text" name="opB" placeholder="Option B"  required  data-parsley-maxlength=50 onclick="checkUser()"  />
     
   </div>
   <div class="form-group">
     <label for="exampleInputFile">C</label>
-    <input type="text" name="opC" placeholder="Option C"  required  data-parsley-maxlength=50  />
+    <input type="text" name="opC" placeholder="Option C"  required  data-parsley-maxlength=50  onclick="checkUser()" />
     
   </div>
   <div class="form-group">
     <label for="exampleInputFile">D</label>
-    <input type="text" name="opD" placeholder="Option D"  required   data-parsley-maxlength=50  />
+    <input type="text" name="opD" placeholder="Option D"  required   data-parsley-maxlength=50   onclick="checkUser()" />
     
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
