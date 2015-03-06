@@ -32,6 +32,7 @@
   function checkUser()
   {
    checkLoginState();
+
   }
 function checkLoginStatus(response) {
         if(response && response.status == 'connected') {
@@ -74,8 +75,7 @@ function checkLoginStatus(response) {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + response.id +'!';
+      document.getElementById('status').innerHTML =response.id ;
     });
   }
 
