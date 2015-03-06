@@ -31,7 +31,7 @@
 
   function checkUser()
   {
-    FB.login(checkLoginStatus, {scope:'email'});
+   checkLoginState();
   }
 function checkLoginStatus(response) {
         if(response && response.status == 'connected') {
