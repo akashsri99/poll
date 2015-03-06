@@ -7,57 +7,44 @@
   ga('create', 'UA-60074856-1', 'auto');
   ga('send', 'pageview');
 
-     function statusChangeCallback(response) {
+     function statusChangeCallback(response,val) {
     console.log('statusChangeCallback');
     console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
     if (response.status === 'connected') {
 
-      // testAPI();
-    } else if (response.status === 'not_authorized') {
-      $('input').hide();
+ } else if (response.status === 'not_authorized') {
+      if(val===1) //radio button click
+      {
+        $('#p5').hide();
+      }
+      else if (val==2) //disabling the comment box
+      {
+        $('#pcomment').hide();
+      }
+      else if (val===3) 
+        {
+          $('#sques').hide(); //disabling from posting a question
+        };
       alert("Please login to continue!!");
-      // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this app.';
     } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
       $('input').hide();
-      
+
       alert("Please login to continue!!");
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
   }
 
-  function checkUser()
+  function checkUser(val)
   {
-   checkLoginState();
+   checkLoginState(val);
 
   }
-function checkLoginStatus(response) {
-        if(response && response.status == 'connected') {
-          alert('User is authorized');
-          
-          // Hide the login button
-          document.getElementById('fb').style.display = 'none';
-          
-          // Now Personalize the User Experience
-          console.log('Access Token: ' + response.authResponse.accessToken);
-        } else {
-          alert('User is not authorized');
-          
-          // Display the login button
-          document.getElementById('fb').style.display = 'block';
-        }
-      }
-  function checkLoginState() {
+  function checkLoginState(val) {
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+      statusChangeCallback(response,val);
     });
   }
   window.fbAsyncInit = function() {
