@@ -81,8 +81,9 @@ function radioclick(val)
 {
   document.getElementById("result").value=val;
   checkUser();
+   if (response.status === 'connected') {
   $('#p5').show();
-          
+          }
 }
 
 function slider()
