@@ -80,7 +80,7 @@ function hidep()
 function radioclick(val)
 {
   document.getElementById("result").value=val;
-  checkLoginState();
+  checkLoginState(response);
   if (response.status === 'connected') {
   $('#p5').show();
             }
