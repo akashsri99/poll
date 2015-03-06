@@ -83,13 +83,13 @@ function radioclick(val)
   checkLoginState();
   if (response.status === 'connected') {
   $('#p5').show();
+            }
+          else
+          {
+            alert("Please login");
+          }
 }
-else
-{
-  alert("Please login");
-}
-}
-}
+
 function slider()
 {
   $('#comment').slideDown();
