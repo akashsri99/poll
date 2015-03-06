@@ -29,6 +29,26 @@
     }
   }
 
+  function checkUser()
+  {
+    FB.login(checkLoginStatus, {scope:'email'});
+  }
+function checkLoginStatus(response) {
+        if(response && response.status == 'connected') {
+          alert('User is authorized');
+          
+          // Hide the login button
+          document.getElementById('fb').style.display = 'none';
+          
+          // Now Personalize the User Experience
+          console.log('Access Token: ' + response.authResponse.accessToken);
+        } else {
+          alert('User is not authorized');
+          
+          // Display the login button
+          document.getElementById('fb').style.display = 'block';
+        }
+      }
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
