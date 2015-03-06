@@ -28,8 +28,22 @@
       alert("Please login to continue!!");
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this app.';
-    } else {
-      $('input').hide();
+    } 
+else {
+     if(val===1) //radio button click
+      {
+        $('#p5').hide();
+      }
+      else if (val==2) //disabling the comment box
+      {
+        $('#pcomment').hide();
+      }
+      else if (val===3) 
+        {
+          $('#sques').hide(); //disabling from posting a question
+        };
+      alert("Please login to continue!!");
+     
 
       alert("Please login to continue!!");
       document.getElementById('status').innerHTML = 'Please log ' +
