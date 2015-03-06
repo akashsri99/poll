@@ -25,8 +25,7 @@
         {
           $('#sques').hide(); //disabling from posting a question
         };
-        $("#dialog").dialog();
-      document.getElementById('status').innerHTML = 'Please log ' +
+       document.getElementById('status').innerHTML = 'Please log ' +
         'into this app.';
     } 
 else {
@@ -42,7 +41,6 @@ else {
         {
           $('#sques').hide(); //disabling from posting a question
         };
-      $("#dialog").dialog();
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
