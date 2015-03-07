@@ -11,8 +11,9 @@
     console.log('statusChangeCallback');
     console.log(response);
     if (response.status === 'connected') {
- $('#p5').show();
- 
+      if(val===1){
+          $('#p5').show(); //for radio button
+ }
  } else if (response.status === 'not_authorized') {
       if(val===1) //radio button click
       {
