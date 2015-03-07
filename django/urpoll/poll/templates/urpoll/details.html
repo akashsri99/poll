@@ -162,6 +162,10 @@ $(document).ajaxStart(function()
 <input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" onclick="slider" /> 
 </form>
 
+  <div align="center">
+<span id="spinner"><img src="{{ STATIC_URL }}spinner.gif" align="middle" /></span>
+</div>
+
 
 <div id="comment">
 <form role="form" action="{% url 'reason_opt' details.id %}" method="POST" id="form2" data-parsley-validate>
@@ -285,9 +289,6 @@ $(document).ajaxStart(function()
 
 <br>
 <br>
-  <div align="center">
-<span id="spinner"><img src="{{ STATIC_URL }}spinner.gif" align="middle" /></span>
-</div>
 
   <div id="results"></div>
  
