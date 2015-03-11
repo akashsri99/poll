@@ -126,10 +126,10 @@ $('#opt4').tab('show')
 
 $(document).ajaxStart(function()
 {
-  $('#spinner').show();
+  $('#loading').show();
 }).ajaxStop(function()
 {
-  $('#spinner').hide();
+  $('#loading').hide();
 })
 });
     </script>
@@ -161,10 +161,10 @@ $(document).ajaxStart(function()
      
 <input type="submit" value="Vote"  class="btn btn-primary btn-sm" id="p5" onclick="slider" /> 
 </form>
-
+<!-- 
   <div align="center">
 <span id="loader"><img src="{{ STATIC_URL }}spinner.gif"  /></span>
-</div>
+</div> -->
 
 
 <div id="comment">
