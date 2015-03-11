@@ -16,13 +16,24 @@
     <script  type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script  type="text/javascript" src="http://parsleyjs.org/dist/parsley.min.js"></script>
     <script>
-    
+
  $(window).load(function() {
     $('#loading').hide();
   });
     </script
   </head>
-
+<style>
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  /* 1/2 of the height and width of the actual gif */
+  margin: -16px 0 0 -16px;
+  z-index: 100;
+  }
+</style>
   
   <body draggable="true">
     <div id="loading">
