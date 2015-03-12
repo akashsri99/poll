@@ -16,6 +16,8 @@
     console.log(response);
     if (response.status === 'connected') {
         FB.api('/me', function(response) {
+          console.log(response.name);
+    
    document.getElementById('username').innerHTML =response.name;
   });
       if(val===1){
