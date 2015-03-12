@@ -59,6 +59,7 @@ else {
   function checkUser(val)
   {
    checkLoginState(val);
+   testAPI();
 
   }
   function checkLoginState(val) {
