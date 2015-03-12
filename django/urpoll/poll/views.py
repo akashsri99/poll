@@ -15,8 +15,12 @@ def cat(request,id):
 
 def detail(request,id):
 	categorys=category.objects.order_by('Name')
-	details=Question.objects.get(pk=id)
-	related=Question.objects.filter(category=details.category.id)
+	try:
+		details=Question.objects.get(pk=id)
+		related=Question.objects.filter(category=details.category.id)
+	except Question.DoesNotExist:
+		raise Http404("Page Not Found")
+
 	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related})
 
 def submit_form(request,id):
