@@ -51,18 +51,19 @@ def reason_opt(request,id):
 		ques=Question.objects.get(pk=id)
 		ans1=request.POST.get('ans')
 		ctext=request.POST.get('test')
+		user=request.POST.get('username1')
 		if ctext:
 			if ans1=="1":
-				c=comment_A(question=ques,userid=request.POST.get('username1'),text=ctext)
+				c=comment_A(question=ques,userid=user,text=ctext)
 				c.save()
 			elif ans1=="2":
-				c=comment_B(question=ques,userid=request.POST.get('username1'),text=ctext)
+				c=comment_B(question=ques,userid=user,text=ctext)
 				c.save()
 			elif ans1=="3":
-				c=comment_C(question=ques,userid=request.POST.get('username1'),text=ctext)
+				c=comment_C(question=ques,userid=user,text=ctext)
 				c.save()
 			elif ans1=="4":
-				c=comment_D(question=ques,userid=request.POST.get('username1'),text=ctext)
+				c=comment_D(question=ques,userid=user,text=ctext)
 				c.save()
 
 		return render(request,'urpoll/blank.html',{})
