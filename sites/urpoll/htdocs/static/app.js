@@ -11,9 +11,7 @@
   var userid;
 
      function statusChangeCallback(response,val) {
-      document.getElementById('#username').innerHTML =response.name;
-      window.userid=response.id;
-
+      
     console.log('statusChangeCallback');
     console.log(response);
     if (response.status === 'connected') {
@@ -52,6 +50,8 @@ else {
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
+    document.getElementById('#username').innerHTML =response.name;
+      
   }
 
   function checkUser(val)
