@@ -14,8 +14,6 @@
 <script  type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script  src="http://malsup.github.com/jquery.form.js"></script> 
 <script type="text/javascript">
-function gcharts()
-{
      google.load('visualization', '1.0', {'packages':['corechart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
@@ -51,8 +49,7 @@ function gcharts()
         chart.draw(data, options);
       }
       
- }
- gcharts();      
+       
     </script>
     <script >
      $(document).ready(function() {
@@ -100,7 +97,7 @@ function radioclick(val)
   {
     window.D1=window.D1+1;
   }
-  gcharts();
+drawChart();  
 }
 
 function slider()
