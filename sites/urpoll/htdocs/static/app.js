@@ -15,7 +15,7 @@
     console.log('statusChangeCallback');
     console.log(response);
     if (response.status === 'connected') {
-      
+
     document.getElementById("#username").innerHTML =response.name;
       if(val===1){
           $('#p5').show(); //for radio button
@@ -52,17 +52,13 @@ else {
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
-    FB.api('/me', function(response) {
-    
-    document.getElementById("#username").innerHTML =response.name;
-    });  
+      
   }
 
   function checkUser(val)
   {
    checkLoginState(val);
-   testAPI();
-
+   
   }
   function checkLoginState(val) {
     FB.getLoginStatus(function(response) {
