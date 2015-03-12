@@ -53,7 +53,7 @@ else {
     FB.api('/me', function(response) {
     
     document.getElementById('#username').innerHTML =response.name;
-    }  
+    });  
   }
 
   function checkUser(val)
