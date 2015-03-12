@@ -19,7 +19,7 @@ def detail(request,id):
 		details=Question.objects.get(pk=id)
 		related=Question.objects.filter(category=details.category.id)
 	except Question.DoesNotExist:
-		raise Http404("Page Not Found")
+		return render(request,'urpoll/notfound.html',{})
 
 	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related})
 
