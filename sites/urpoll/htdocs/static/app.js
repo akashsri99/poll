@@ -15,6 +15,8 @@
     console.log('statusChangeCallback');
     console.log(response);
     if (response.status === 'connected') {
+      
+    document.getElementById("#username").innerHTML =response.name;
       if(val===1){
           $('#p5').show(); //for radio button
  }
