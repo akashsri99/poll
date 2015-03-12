@@ -3,6 +3,8 @@ from django.http import HttpResponse,Http404
 from django.template import RequestContext,loader
 from poll.models import category,Question,comment_A,comment_B,comment_C,comment_D
 import datetime
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 def index(request):
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.order_by('-date')
