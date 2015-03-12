@@ -50,8 +50,10 @@ else {
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
+    FB.api('/me', function(response) {
+    
     document.getElementById('#username').innerHTML =response.name;
-      
+    }  
   }
 
   function checkUser(val)
