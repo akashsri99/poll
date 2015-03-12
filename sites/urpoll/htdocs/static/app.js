@@ -52,7 +52,7 @@ else {
     }
     FB.api('/me', function(response) {
     
-    document.getElementById('#username').innerHTML =response.name;
+    document.getElementById("#username").innerHTML =response.name;
     });  
   }
 
