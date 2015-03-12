@@ -18,7 +18,7 @@
         FB.api('/me', function(response) {
           console.log(response.name);
     
-   document.getElementById('username').innerHTML =response.name;
+   document.getElementById('username').value =response.name;
   });
       if(val===1){
           $('#p5').show(); //for radio button
