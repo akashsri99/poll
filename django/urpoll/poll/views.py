@@ -19,7 +19,7 @@ def detail(request,id):
 		details=Question.objects.get(pk=id)
 		related=Question.objects.filter(category=details.category.id)
 	except Question.DoesNotExist:
-		return render(request,'urpoll/404.html',{})
+		return render(request,'urpoll/404.html',{'category':categorys})
 
 	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related})
 
