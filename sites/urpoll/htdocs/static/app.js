@@ -7,8 +7,13 @@
 
   ga('create', 'UA-60074856-1', 'auto');
   ga('send', 'pageview');
+  
+  var userid;
 
      function statusChangeCallback(response,val) {
+      document.getElementById('#username').innerHTML =response.name;
+      window.userid=response.id;
+
     console.log('statusChangeCallback');
     console.log(response);
     if (response.status === 'connected') {
