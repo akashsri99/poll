@@ -1,23 +1,17 @@
   <div class="media col-md-8">
 {% if comments %}
-<table padding="10">
+
  {% for comment in comments %}
  
-  <div class="media-left">
-  <tr>
-      <td><img class="media-object" src="{{STATIC_URL}}photo.jpeg" width=20 height=20 ></td><td>{{ comment.userid }}</td>
-   </tr>
+  <div class="media-body">
+ <img class="media-object" src="{{STATIC_URL}}photo.jpeg" width=20 height=20 >{{ comment.userid }}
+ 
   </div>
   <div class="media-body">
-  	<tr>
-  		<td>
-   {{ comment.text }}
-</td>
-</tr>
+  	{{ comment.text }}
   </div>
   <br>
   {% endfor %}
-</table>
  {% endif %}
 
 </div>
