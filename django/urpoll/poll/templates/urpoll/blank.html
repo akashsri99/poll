@@ -3,12 +3,13 @@
 
  {% for comment in comments %}
  
-  <div class="media-body">
+  <div class="media">
+  	<div class="media-left media-middle">
  <img class="media-object" src="{{STATIC_URL}}photo.jpeg" >
- 
+ </div>
   </div>
   <div class="media-body">
-  	<h4 class="media-heading">{{ comment.userid }}</h4>
+  	<h5 class="media-heading">{{ comment.userid }}</h5>
   	{{ comment.text }}
   </div>
   <br>
