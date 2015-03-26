@@ -5,13 +5,13 @@
  
   <div class="media">
   	<div class="media-left media-middle">
- <img class="media-object" src="{{STATIC_URL}}photo.jpeg" >
+ <img class="media-object" src="{{STATIC_URL}}photo.jpeg" width=20 height=20>
  </div>
   <div class="media-body">
   	<h5 class="media-heading">{{ comment.userid }}</h5>
   	{{ comment.text }}
   </div>
-  
+
   </div>
   <br>
   {% endfor %}
