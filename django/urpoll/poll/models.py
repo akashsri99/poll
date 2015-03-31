@@ -29,6 +29,8 @@ class comment_A(models.Model):
 	question=models.ForeignKey(Question)
 	userid=models.CharField(max_length=100)
 	text=models.CharField(max_length=100)
+	person_uid=models.CharField(max_length=200)
+	
 	def __unicode__(self):
 		return self.text
 
@@ -37,6 +39,8 @@ class comment_B(models.Model):
 	question=models.ForeignKey(Question)
 	userid=models.CharField(max_length=100)
 	text=models.CharField(max_length=100)
+	person_uid=models.CharField(max_length=200)
+	
 	def __unicode__(self):
 		return self.text
 
@@ -44,6 +48,8 @@ class comment_C(models.Model):
 	question=models.ForeignKey(Question)
 	userid=models.CharField(max_length=100)
 	text=models.CharField(max_length=100)
+	person_uid=models.CharField(max_length=200)
+	
 	def __unicode__(self):
 		return self.text
 
@@ -51,6 +57,8 @@ class comment_D(models.Model):
 	question=models.ForeignKey(Question)
 	userid=models.CharField(max_length=100)
 	text=models.CharField(max_length=100)
+	person_uid=models.CharField(max_length=200)
+	
 	def __unicode__(self):
 		return self.text
 
@@ -58,6 +66,7 @@ class comment_D(models.Model):
 
 class votes_ques(models.Model):
 	person_id=models.CharField(max_length=200)
+
 	quesid=models.IntegerField(default=0)
 	ans_id=models.IntegerField(default=0)
 
