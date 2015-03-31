@@ -55,16 +55,28 @@ def reason_opt(request,id):
 		if ctext:
 			if ans1=="1":
 				c=comment_A(question=ques,userid=user,text=ctext)
+
+				audit=votes_ques(person_id=user,quesid=ques,ans_id=1)
+				audit.save()
 				c.save()
 			elif ans1=="2":
 				c=comment_B(question=ques,userid=user,text=ctext)
 				c.save()
+
+				audit=votes_ques(person_id=user,quesid=ques,ans_id=2)
+				audit.save()
 			elif ans1=="3":
 				c=comment_C(question=ques,userid=user,text=ctext)
 				c.save()
+
+				audit=votes_ques(person_id=user,quesid=ques,ans_id=3)
+				audit.save()
 			elif ans1=="4":
 				c=comment_D(question=ques,userid=user,text=ctext)
 				c.save()
+
+				audit=votes_ques(person_id=user,quesid=ques,ans_id=4)
+				audit.save()
 
 		return render(request,'urpoll/blank.html',{})
 
