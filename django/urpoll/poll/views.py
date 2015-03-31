@@ -32,20 +32,20 @@ def submit_form(request,id):
 	if request.POST.get('choice')=="1":
 		details.vote_1=details.vote_1+1
 
-		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=1)
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details.id,ans_id=1)
 		
 
 	if request.POST.get('choice')=="2":
 		details.vote_2=details.vote_2+1
-		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=2)
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details.id,ans_id=2)
 		
 	if request.POST.get('choice')=="3":
 		details.vote_3=details.vote_3+1
-		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=3)
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details.id,ans_id=3)
 		
 	if request.POST.get('choice')=="4":
 		details.vote_4=details.vote_4+1
-		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=4)
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details.id,ans_id=4)
 		
 
 	details.response=details.response+1
