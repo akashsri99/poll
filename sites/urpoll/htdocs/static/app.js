@@ -19,6 +19,8 @@
           console.log(response.name);
     
    document.getElementById('username').value =response.name;
+
+   document.getElementById('userid').value =response.id;
   });
       if(val===1){
           $('#p5').show(); //for radio button

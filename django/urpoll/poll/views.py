@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,Http404
 from django.template import RequestContext,loader
-from poll.models import category,Question,comment_A,comment_B,comment_C,comment_D
+from poll.models import category,Question,comment_A,comment_B,comment_C,comment_D,votes_ques
 import datetime
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -31,18 +31,27 @@ def submit_form(request,id):
 	
 	if request.POST.get('choice')=="1":
 		details.vote_1=details.vote_1+1
+
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=1)
 		
 
 	if request.POST.get('choice')=="2":
 		details.vote_2=details.vote_2+1
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=2)
+		
 	if request.POST.get('choice')=="3":
 		details.vote_3=details.vote_3+1
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=3)
+		
 	if request.POST.get('choice')=="4":
 		details.vote_4=details.vote_4+1
+		audit=votes_ques(person_id=request.POST.get('userid'),quesid=details,ans_id=4)
+		
 
 	details.response=details.response+1
 	c=request.POST.get('choice')
 	details.save()
+	audit.save()
 	reason=request.POST.get('reason')
 
 	return render(request,'urpoll/details.html',{'details':details,'related':related})
