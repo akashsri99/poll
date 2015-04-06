@@ -22,7 +22,7 @@ def getUserAttempts(userid):
 
 def detail(request,id,userid):
 
-	attempts=getUserAttempts(userid);
+	attempts=getUserAttempts(personid=userid);
 	categorys=category.objects.order_by('Name')
 	try:
 		details=Question.objects.get(pk=id)
