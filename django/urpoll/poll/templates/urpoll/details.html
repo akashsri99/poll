@@ -182,8 +182,9 @@ $(document).ajaxStart(function()
     </script>
     
 <div class="col-sm-12">
-  {{ request.get_full_path }}
+
 <pre>
+   {{ request.get_full_path }}
 {{ details.question  }}
 </pre>
 <form role="form" action="{% url 'submit_form' details.id %}" method="POST" id="form1"  >
