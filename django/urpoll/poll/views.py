@@ -15,14 +15,7 @@ def cat(request,id):
 	ques=Question.objects.filter(category=id)
 	return render(request,'urpoll/index.html',{'ques':ques,'category':categorys})
 
-
-def getUserAttempts(userid):
-	attempts=votes_ques.objects.filter(userid);
-	return attempts;
-
-def detail(request,id,userid):
-
-	attempts=getUserAttempts(personid=userid);
+def detail(request,id):
 	categorys=category.objects.order_by('Name')
 	try:
 		details=Question.objects.get(pk=id)
@@ -30,7 +23,7 @@ def detail(request,id,userid):
 	except Question.DoesNotExist:
 		return render(request,'urpoll/404.html',{'category':categorys})
 
-	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related,'attempts':attempts})
+	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related})
 
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
