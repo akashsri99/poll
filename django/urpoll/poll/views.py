@@ -21,13 +21,14 @@ def getUserAttempts(request,userid):
 
 def detail(request,id):
 	categorys=category.objects.order_by('Name')
+	url=request.get_full_path
 	try:
 		details=Question.objects.get(pk=id)
 		related=Question.objects.filter(category=details.category.id)
 	except Question.DoesNotExist:
 		return render(request,'urpoll/404.html',{'category':categorys})
 
-	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related})
+	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related,'url':url})
 
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
