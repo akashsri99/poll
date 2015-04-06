@@ -38,9 +38,8 @@
         {
           $('#sques').hide(); //disabling from posting a question
         };
-       document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-        window.alert("Please Login with facebook");
+       
+        alert("Please Login with facebook");
     } 
 else {
      if(val===1) //radio button click
@@ -55,9 +54,7 @@ else {
         {
           $('#sques').hide(); //disabling from posting a question
         };
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-
+      
         window.alert("Please Login with facebook");
     }
       
