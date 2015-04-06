@@ -8,7 +8,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def index(request):
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.order_by('-date')
-	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques})
+	url=request.get_full_path
+	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques,'url':url})
 
 def cat(request,id):
 	categorys=category.objects.order_by('Name')
