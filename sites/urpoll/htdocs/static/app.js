@@ -40,6 +40,7 @@
         };
        document.getElementById('status').innerHTML = 'Please log ' +
         'into this app.';
+        alert("Please Login with facebook");
     } 
 else {
      if(val===1) //radio button click
@@ -56,6 +57,8 @@ else {
         };
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
+        
+        alert("Please Login with facebook");
     }
       
   }
