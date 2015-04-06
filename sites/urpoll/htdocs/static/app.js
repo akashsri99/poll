@@ -8,7 +8,7 @@
   ga('create', 'UA-60074856-1', 'auto');
   ga('send', 'pageview');
   
-  var userid;
+  var userid=null;
 
      function statusChangeCallback(response,val) {
       
