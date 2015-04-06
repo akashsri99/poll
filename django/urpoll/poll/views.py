@@ -15,6 +15,10 @@ def cat(request,id):
 	ques=Question.objects.filter(category=id)
 	return render(request,'urpoll/index.html',{'ques':ques,'category':categorys})
 
+def getUserAttempts(request,userid):
+	attempts=votes_ques.objects.filter(person_id=userid)
+	return attempts
+
 def detail(request,id):
 	categorys=category.objects.order_by('Name')
 	try:
