@@ -5,11 +5,10 @@ from poll.models import category,Question,comment_A,comment_B,comment_C,comment_
 import datetime
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-def index(request,userid):
-	attempts=getUserAttempts(userid);
+def index(request):
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.order_by('-date')
-	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques,'attempts':attempts})
+	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques})
 
 def cat(request,id):
 	categorys=category.objects.order_by('Name')
