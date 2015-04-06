@@ -182,6 +182,11 @@ $(document).ajaxStart(function()
     </script>
     
 <div class="col-sm-12">
+  {{ if attempts }}
+  {{ for attempt in attempts }}
+  {{ attempts.quesid}}
+  {{ endfor }}
+  {{ endif }}
 <pre>
 {{ details.question  }}
 </pre>

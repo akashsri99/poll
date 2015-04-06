@@ -5,17 +5,25 @@ from poll.models import category,Question,comment_A,comment_B,comment_C,comment_
 import datetime
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-def index(request):
+def index(request,userid):
+	attempts=getUserAttempts(userid);
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.order_by('-date')
-	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques})
+	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques,'attempts':attempts})
 
 def cat(request,id):
 	categorys=category.objects.order_by('Name')
 	ques=Question.objects.filter(category=id)
 	return render(request,'urpoll/index.html',{'ques':ques,'category':categorys})
 
-def detail(request,id):
+
+def getUserAttempts(userid):
+	attempts=votes_ques.objects.filter(userid);
+	return attempts;
+
+def detail(request,id,userid):
+
+	attempts=getUserAttempts(userid);
 	categorys=category.objects.order_by('Name')
 	try:
 		details=Question.objects.get(pk=id)
@@ -23,7 +31,7 @@ def detail(request,id):
 	except Question.DoesNotExist:
 		return render(request,'urpoll/404.html',{'category':categorys})
 
-	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related})
+	return render(request,'urpoll/details.html',{'details':details,'category':categorys,'related':related,'attempts':attempts})
 
 def submit_form(request,id):
 	details = get_object_or_404(Question, pk=id)
