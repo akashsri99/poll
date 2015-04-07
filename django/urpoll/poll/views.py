@@ -109,3 +109,11 @@ def submit_question(request):
 	ques=Question.objects.order_by('-date')
 	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques})
 
+def submit_questions(request,id):
+	c=category.objects.get(Name=request.POST.get('Category'))
+	q=Question(category=c,question=request.POST.get('question'),date=datetime.datetime.now(),option1=request.POST.get('opA'),option2=request.POST.get('opB'),option3=request.POST.get('opC'),option4=request.POST.get('opD'))
+	q.save()
+	categorys=category.objects.order_by('Name')
+	ques=Question.objects.order_by('-date')
+	return render(request,'urpoll/index.html',{'category':categorys,'ques':ques})
+
