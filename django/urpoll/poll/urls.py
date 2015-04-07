@@ -6,7 +6,7 @@ urlpatterns = patterns('',
                        url(r'^$', views.index, name='index'),
 		       url(r'^(?P<id>\d+)/$',views.cat,name='cat'),
 		       url(r'^(?P<id>\d+)/detail/$',views.detail,name='detail'),
-		       url(r'^submit_question$',views.submit_question,name='submit_question'),
+		       url(r'^submit_questions$',views.submit_question,name='submit_question'),
 		       url(r'^(?P<id>\d+)/submit_questions$',views.submit_questions,name='submit_questions'),
 		       
 
