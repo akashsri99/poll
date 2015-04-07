@@ -101,7 +101,7 @@ def get_comments_D(request,id):
 	return render(request,'urpoll/blank.html',{'comments':c})
 
 
-def submit_question(request):
+def submit_question(request,id):
 	c=category.objects.get(Name=request.POST.get('Category'))
 	q=Question(category=c,question=request.POST.get('question'),date=datetime.datetime.now(),option1=request.POST.get('opA'),option2=request.POST.get('opB'),option3=request.POST.get('opC'),option4=request.POST.get('opD'))
 	q.save()
