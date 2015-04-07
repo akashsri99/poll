@@ -29,7 +29,7 @@
       </div>
 <div class="modal-body">
 <!-- form for Adding a question-->
-<form role="form" action="poll:submit_question" method="POST" id="addQuestion"  data-parsley-validate>
+<form role="form" action="submit_question" method="POST" id="addQuestion"  data-parsley-validate>
   {% csrf_token %}
     <label for="sel1">Select a Category</label>
       <select class="form-control" id="sel1" name="Category" >
